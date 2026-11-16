@@ -227,3 +227,4 @@ dist
 test-results
 playwright-report
 *.tsbuildinfo
+logo/
