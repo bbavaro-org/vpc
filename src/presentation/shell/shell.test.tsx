@@ -1,46 +1,72 @@
-import { describe, expect, it } from 'vitest';
-import { renderToString } from 'react-dom/server';
-import { DashboardShell } from './DashboardShell';
-import { PanelSlotView } from './PanelSlot';
-import { resolveSlot, SLOT_IDS, type DashboardProvider } from './provider';
+import { describe, expect, it } from "vitest";
+import { renderToString } from "react-dom/server";
+import { DashboardShell } from "./DashboardShell";
+import { PanelSlotView } from "./PanelSlot";
+import { resolveSlot, SLOT_IDS, type DashboardProvider } from "./provider";
 
-const ok = async () => ({ items: [{ label: 'Leads', value: '42' }] });
+const ok = async () => ({ items: [{ label: "Leads", value: "42" }] });
 
-describe('dashboard shell', () => {
-  it('renders header, navigation, role and five named slots in loading state', () => {
-    const html = renderToString(<DashboardShell provider={{}} role="Practice Owner" />);
-    expect(html).toContain('<header');
-    expect(html).toContain('<nav');
-    expect(html).toContain('Practice Owner');
+describe("dashboard shell", () => {
+  it("renders header, navigation, role and five named slots in loading state", () => {
+    const html = renderToString(
+      <DashboardShell provider={{}} role="Practice Owner" />,
+    );
+    expect(html).toContain("<header");
+    expect(html).toContain("<nav");
+    expect(html).toContain("Practice Owner");
     for (const id of SLOT_IDS) expect(html).toContain(`data-slot="${id}"`);
     expect(html.match(/data-state="loading"/g)).toHaveLength(5);
-    expect(html).toContain('Loading');
+    expect(html).toContain("Loading");
+    expect(html).toContain('alt="Vancouver Psychology Centre"');
+    expect(html).not.toContain("vpc-btn");
+    for (const id of SLOT_IDS)
+      expect(html).toContain(`href="#slot-${id}-title"`);
   });
 
-  it('resolves an empty state for empty data and for a missing loader', async () => {
-    const provider: DashboardProvider = { 'intake-funnel': async () => ({ items: [] }) };
-    expect(await resolveSlot(provider, 'intake-funnel')).toEqual({ status: 'empty' });
-    expect(await resolveSlot(provider, 'lead-sources')).toEqual({ status: 'empty' });
-    const html = renderToString(<PanelSlotView slot="intake-funnel" state={{ status: 'empty' }} />);
-    expect(html).toContain('No data yet.');
-  });
-
-  it('isolates a failing slot: only that slot errors, the other four still resolve', async () => {
+  it("resolves an empty state for empty data and for a missing loader", async () => {
     const provider: DashboardProvider = {
-      'headline-metrics': ok,
-      'intake-funnel': async () => {
-        throw new Error('boom');
-      },
-      'lead-sources': ok,
-      'clinician-capacity': ok,
-      'automation-impact': ok,
+      "intake-funnel": async () => ({ items: [] }),
     };
-    const states = await Promise.all(SLOT_IDS.map((id) => resolveSlot(provider, id)));
-    expect(states.map((s) => s.status)).toEqual(['ready', 'error', 'ready', 'ready', 'ready']);
-    const html = renderToString(<PanelSlotView slot="intake-funnel" state={states[1]!} />);
-    expect(html).toContain('boom');
+    expect(await resolveSlot(provider, "intake-funnel")).toEqual({
+      status: "empty",
+    });
+    expect(await resolveSlot(provider, "lead-sources")).toEqual({
+      status: "empty",
+    });
+    const html = renderToString(
+      <PanelSlotView slot="intake-funnel" state={{ status: "empty" }} />,
+    );
+    expect(html).toContain("No data yet.");
+  });
+
+  it("isolates a failing slot: only that slot errors, the other four still resolve", async () => {
+    const provider: DashboardProvider = {
+      "headline-metrics": ok,
+      "intake-funnel": async () => {
+        throw new Error("boom");
+      },
+      "lead-sources": ok,
+      "clinician-capacity": ok,
+      "automation-impact": ok,
+    };
+    const states = await Promise.all(
+      SLOT_IDS.map((id) => resolveSlot(provider, id)),
+    );
+    expect(states.map((s) => s.status)).toEqual([
+      "ready",
+      "error",
+      "ready",
+      "ready",
+      "ready",
+    ]);
+    const html = renderToString(
+      <PanelSlotView slot="intake-funnel" state={states[1]!} />,
+    );
+    expect(html).toContain("boom");
     expect(html).toContain('role="alert"');
-    const okHtml = renderToString(<PanelSlotView slot="lead-sources" state={states[2]!} />);
-    expect(okHtml).toContain('42');
+    const okHtml = renderToString(
+      <PanelSlotView slot="lead-sources" state={states[2]!} />,
+    );
+    expect(okHtml).toContain("42");
   });
 });
