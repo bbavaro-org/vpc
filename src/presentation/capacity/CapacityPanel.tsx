@@ -1,15 +1,8 @@
 import type { SpecialtyBooking, Waitlist } from '../../application/capacity';
+import { cardStyle } from '../shell/cardStyle';
 
 /** Booked percentage at or above which a specialty is shown as near full. */
 const NEAR_FULL_PERCENT = 90;
-
-const cardStyle = {
-  background: 'var(--white)',
-  border: '1px solid var(--line)',
-  borderRadius: 'var(--radius-lg)',
-  boxShadow: 'var(--shadow-card)',
-  padding: 'var(--space-4)',
-} as const;
 
 function SpecialtyRow({ booking }: { booking: SpecialtyBooking }) {
   if (booking.state === 'no-capacity') {

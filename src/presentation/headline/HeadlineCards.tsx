@@ -5,6 +5,7 @@ import type {
   HeadlineMetrics,
   UtilizationMetric,
 } from '../../application/headline';
+import { cardStyle } from '../shell/cardStyle';
 
 interface Unit {
   readonly suffix: string;
@@ -26,14 +27,6 @@ const BAND_LABEL: Record<BandStatus, string> = {
   within: 'Within target',
   above: 'Above target',
 };
-
-const cardStyle = {
-  background: 'var(--white)',
-  border: '1px solid var(--line)',
-  borderRadius: 'var(--radius-lg)',
-  boxShadow: 'var(--shadow-card)',
-  padding: 'var(--space-4)',
-} as const;
 
 function MetricCard({
   id,
