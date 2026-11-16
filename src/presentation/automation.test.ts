@@ -30,6 +30,20 @@ describe('automation panel', () => {
     expect(html).not.toContain('Needs attention');
   });
 
+  it('renders needs-attention and healthy tags with different token-backed treatments', () => {
+    const tag = (count: number) => {
+      const html = renderToString(createElement(AutomationPanel, { impact: impact(count) }));
+      return html.match(/<span class="vpc-tag"[^>]*>/)![0];
+    };
+    const attention = tag(3);
+    const healthy = tag(0);
+    expect(attention).not.toBe(healthy);
+    expect(attention).toContain('background:var(--green-deep)');
+    expect(attention).toContain('color:var(--white)');
+    expect(healthy).not.toContain('background');
+    expect(healthy).not.toContain('color:var(--ink)');
+  });
+
   it('loader always yields four items from the mock repository', async () => {
     const state = await resolveSlot(
       { 'automation-impact': automationLoader(new MockAutomationRepository()) },

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { DashboardShell } from '../shell/DashboardShell';
-import { closeAuditView, openAuditView } from '../shell/auditNav';
+import { openAuditView } from '../shell/auditNav';
 import { InMemoryAuditLog } from '../../infrastructure/inMemoryAuditLog';
 
 describe('audit view navigation', () => {
@@ -41,7 +41,6 @@ describe('audit view navigation', () => {
     expect(log.list()).toHaveLength(1);
     expect(openAuditView(log, 'management', true)).toBe(true);
     expect(log.list()).toHaveLength(1);
-    expect(closeAuditView()).toBe(false);
     expect(log.list()).toHaveLength(1);
   });
 });

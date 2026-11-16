@@ -50,9 +50,19 @@ export function AutomationPanel({ impact }: { impact: AutomationImpact }) {
         status={syncErrors.status}
       >
         <p style={{ margin: 'var(--space-2) 0 0' }}>
-          <span className="vpc-tag" style={{ color: 'var(--ink)' }}>
-            {syncErrors.status === 'needs-attention' ? 'Needs attention' : 'Healthy'}
-          </span>
+          {syncErrors.status === 'needs-attention' ? (
+            <span
+              className="vpc-tag"
+              data-tag-tone="needs-attention"
+              style={{ background: 'var(--green-deep)', color: 'var(--white)' }}
+            >
+              Needs attention
+            </span>
+          ) : (
+            <span className="vpc-tag" data-tag-tone="healthy">
+              Healthy
+            </span>
+          )}
         </p>
       </MeasureCard>
     </div>
