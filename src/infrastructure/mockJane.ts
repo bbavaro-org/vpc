@@ -11,7 +11,7 @@ import storeJson from './seed-data/store.json';
 interface RawStore {
   appointments: { specialty: string; status: AppointmentStatus; scheduledAt: string }[];
   inquiries: { source: string; receivedAt: string; intakeStage: IntakeStage }[];
-  clinicians: { weeklyCapacity: number }[];
+  clinicians: { specialty: string; weeklyCapacity: number }[];
   waitlist: { specialty: string; addedAt: string }[];
 }
 
@@ -53,6 +53,14 @@ function tally(values: readonly string[]): Map<string, number> {
   return m;
 }
 
+function capacityBySpecialty(
+  clinicians: readonly { specialty: string; weeklyCapacity: number }[],
+): Map<string, number> {
+  const m = new Map<string, number>();
+  for (const c of clinicians) m.set(c.specialty, (m.get(c.specialty) ?? 0) + c.weeklyCapacity);
+  return m;
+}
+
 /** The only reader of raw seeded rows; every method returns aggregates only. */
 export class MockJaneRepository implements BookingRepository, InquiryRepository {
   private readonly store: RawStore;
@@ -77,6 +85,7 @@ export class MockJaneRepository implements BookingRepository, InquiryRepository 
       bySpecialty: toCounts(tally(appts.map((a) => a.specialty))),
       waitlistBySpecialty: toCounts(tally(waiting.map((w) => w.specialty))),
       weeklyCapacity: this.store.clinicians.reduce((sum, c) => sum + c.weeklyCapacity, 0),
+      weeklyCapacityBySpecialty: toCounts(capacityBySpecialty(this.store.clinicians)),
       ...(clampedStart ? { clampedStart } : {}),
     };
   }

@@ -20,6 +20,7 @@ export interface BookingAggregate extends AppointmentAggregate {
   readonly bySpecialty: readonly SpecialtyCount[];
   readonly waitlistBySpecialty: readonly SpecialtyCount[];
   readonly weeklyCapacity: number;
+  readonly weeklyCapacityBySpecialty: readonly SpecialtyCount[];
 }
 
 export interface InquiryAggregate {
