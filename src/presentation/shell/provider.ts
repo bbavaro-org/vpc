@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 export const SLOT_IDS = [
   'headline-metrics',
   'intake-funnel',
@@ -24,6 +26,8 @@ export interface PanelItem {
 /** Already-aggregated view model a slot renders. No items means the slot is empty. */
 export interface PanelViewModel {
   readonly items: ReadonlyArray<PanelItem>;
+  /** Optional custom body rendered in the 'ready' state in place of the generic item list. */
+  readonly render?: () => ReactNode;
 }
 
 /**

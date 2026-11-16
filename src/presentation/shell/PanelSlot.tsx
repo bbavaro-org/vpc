@@ -29,7 +29,8 @@ export function PanelSlotView({ slot, state }: { slot: SlotId; state: SlotState 
             Could not load {SLOT_TITLES[slot].toLowerCase()}: {state.message}
           </p>
         )}
-        {state.status === 'ready' && (
+        {state.status === 'ready' && state.viewModel.render && state.viewModel.render()}
+        {state.status === 'ready' && !state.viewModel.render && (
           <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
             {state.viewModel.items.map((item) => (
               <li key={item.label}>
