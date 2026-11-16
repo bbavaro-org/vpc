@@ -18,5 +18,5 @@ const loaders = createPanelLoaders({
 export function App() {
   const [role, setRole] = useState<Role>(DEFAULT_ROLE);
   const provider = useMemo(() => gateProvider(loaders, role, { log: auditLog }), [role]);
-  return <DashboardShell provider={provider} role={role} onRoleChange={setRole} />;
+  return <DashboardShell provider={provider} role={role} onRoleChange={setRole} auditLog={auditLog} />;
 }

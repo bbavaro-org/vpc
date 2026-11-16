@@ -3,21 +3,28 @@ import "./shell.css";
 const logoUrl = "/vpc-logo.png";
 import { PanelSlot } from "./PanelSlot";
 import { SLOT_TITLES, type DashboardProvider } from "./provider";
-import { permittedPanels } from "../../application/access";
-import type { Role } from "../../domain";
+import { useState } from "react";
+import { canView, permittedPanels } from "../../application/access";
+import { recordView } from "../../application/audit";
+import { AUDIT_VIEW_ID, type AuditLog, type Role } from "../../domain";
+import { AuditViewContainer } from "../audit/AuditView";
 import { RoleSwitcher } from "../access/RoleSwitcher";
 
 export interface DashboardShellProps {
   readonly provider: DashboardProvider;
   readonly role: Role;
   readonly onRoleChange?: (role: Role) => void;
+  readonly auditLog?: AuditLog;
 }
 
 export function DashboardShell({
   provider,
   role,
   onRoleChange,
+  auditLog,
 }: DashboardShellProps) {
+  const [auditOpen, setAuditOpen] = useState(false);
+  const showAudit = canView(role, AUDIT_VIEW_ID);
   const panels = permittedPanels(role);
   return (
     <div
@@ -69,6 +76,18 @@ export function DashboardShell({
             ))}
           </ul>
         </nav>
+        {showAudit && auditLog && (
+          <button
+            type="button"
+            className="vpc-btn vpc-btn-ghost vpc-btn-small"
+            onClick={() => {
+              if (!auditOpen) recordView(auditLog, role, AUDIT_VIEW_ID);
+              setAuditOpen(true);
+            }}
+          >
+            View audit log
+          </button>
+        )}
         <RoleSwitcher role={role} onRoleChange={onRoleChange} />
       </header>
       <main
@@ -84,6 +103,7 @@ export function DashboardShell({
         {panels.map((id) => (
           <PanelSlot key={id} slot={id} provider={provider} />
         ))}
+        {showAudit && auditOpen && auditLog && <AuditViewContainer log={auditLog} />}
       </main>
     </div>
   );
