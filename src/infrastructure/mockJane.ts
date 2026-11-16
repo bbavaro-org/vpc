@@ -4,7 +4,7 @@ import type {
   InquiryAggregate,
   SpecialtyCount,
 } from '../domain/aggregates';
-import type { AppointmentStatus, IntakeStage } from '../domain/entities';
+import type { AppointmentStatus, IntakeStage, Specialty } from '../domain/entities';
 import type { BookingRepository, InquiryRepository } from '../domain/repositories';
 import storeJson from './seed-data/store.json';
 
@@ -44,7 +44,7 @@ function clamp(range: DateRange, windowStart: number): { range: DateRange } & Cl
 
 function inRange(iso: string, range: DateRange): boolean {
   const t = Date.parse(iso);
-  return t >= range.from.getTime() && t <= range.to.getTime();
+  return t >= range.from.getTime() && t < range.to.getTime();
 }
 
 /** Present-state snapshot: added on or before `at` and not yet removed by `at`. */
@@ -68,7 +68,7 @@ function averageDaysToFirstSession(
 function toCounts(counts: Map<string, number>): SpecialtyCount[] {
   return [...counts.entries()]
     .sort(([a], [b]) => a.localeCompare(b))
-    .map(([specialty, count]) => ({ specialty, count }));
+    .map(([specialty, count]) => ({ specialty: specialty as Specialty, count }));
 }
 
 function tally(values: readonly string[]): Map<string, number> {
@@ -107,6 +107,9 @@ export class MockJaneRepository implements BookingRepository, InquiryRepository 
       range,
       byStatus,
       bySpecialty: toCounts(tally(appts.map((a) => a.specialty))),
+      liveBookingsBySpecialty: toCounts(
+        tally(appts.filter((a) => a.status === 'scheduled').map((a) => a.specialty)),
+      ),
       waitlistBySpecialty: toCounts(tally(waiting.map((w) => w.specialty))),
       weeklyCapacity: this.store.clinicians.reduce((sum, c) => sum + c.weeklyCapacity, 0),
       weeklyCapacityBySpecialty: toCounts(capacityBySpecialty(this.store.clinicians)),

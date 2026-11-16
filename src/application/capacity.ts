@@ -1,7 +1,5 @@
-import type { BookingRepository, DateRange, SpecialtyCount } from '../domain';
-import { REFERENCE_NOW } from '../infrastructure/referenceNow';
+import { REFERENCE_NOW, SPECIALTIES, type BookingRepository, type DateRange, type SpecialtyCount } from '../domain';
 
-export const CAPACITY_SPECIALTIES = ['Child/Youth', 'Adult Anxiety', 'Couples', 'Assessments'] as const;
 export const WINDOW_WEEKS = 2;
 const WINDOW_MS = WINDOW_WEEKS * 7 * 24 * 60 * 60 * 1000;
 
@@ -27,10 +25,10 @@ export async function getBookedPercentBySpecialty(
   now: Date = REFERENCE_NOW,
 ): Promise<SpecialtyBooking[]> {
   const agg = await repo.queryBookings(forwardWindow(now));
-  return CAPACITY_SPECIALTIES.map((specialty): SpecialtyBooking => {
+  return SPECIALTIES.map((specialty): SpecialtyBooking => {
     const capacity = countOf(agg.weeklyCapacityBySpecialty, specialty) * WINDOW_WEEKS;
     if (capacity <= 0) return { specialty, state: 'no-capacity' };
-    const booked = countOf(agg.bySpecialty, specialty);
+    const booked = countOf(agg.liveBookingsBySpecialty, specialty);
     return { specialty, state: 'booked', bookedPercent: Math.round((booked / capacity) * 100) };
   });
 }

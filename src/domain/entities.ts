@@ -1,4 +1,5 @@
-export type Specialty = string;
+export const SPECIALTIES = ['Child/Youth', 'Adult Anxiety', 'Couples', 'Assessments'] as const;
+export type Specialty = (typeof SPECIALTIES)[number];
 export type AppointmentStatus = 'scheduled' | 'completed' | 'cancelled' | 'noShow';
 export type IntakeStage = 'new' | 'contacted' | 'assessment' | 'booked' | 'closed';
 

@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { MockJaneRepository } from './mockJane';
-import { REFERENCE_NOW } from './referenceNow';
+import { REFERENCE_NOW, SPECIALTIES } from '../domain';
 import { totalAppointments } from '../domain/aggregates';
-import { CAPACITY_SPECIALTIES, getBookedPercentBySpecialty, getWaitlist } from '../application/capacity';
+import { getBookedPercentBySpecialty, getWaitlist } from '../application/capacity';
 import { getHeadlineMetrics } from '../application/headline';
 
 const repo = new MockJaneRepository();
@@ -39,6 +39,45 @@ describe('mock Jane repository', () => {
     expect(inq.averageDaysToFirstSession).toBeNull();
   });
 
+  it('counts a row on the shared boundary of adjacent windows exactly once', async () => {
+    const boundary = day('2026-10-02');
+    const store = {
+      appointments: [{ specialty: 'Couples', status: 'scheduled' as const, scheduledAt: boundary.toISOString() }],
+      inquiries: [
+        { source: 'website', receivedAt: boundary.toISOString(), intakeStage: 'new' as const, firstSessionAt: null },
+      ],
+      clinicians: [],
+      waitlist: [],
+    };
+    const r = new MockJaneRepository(store);
+    const prior = { from: day('2026-09-02'), to: boundary };
+    const current = { from: boundary, to: day('2026-11-01') };
+    const counts = [
+      totalAppointments(await r.queryBookings(prior)),
+      totalAppointments(await r.queryBookings(current)),
+    ];
+    expect(counts).toEqual([0, 1]);
+    expect([(await r.queryInquiries(prior)).total, (await r.queryInquiries(current)).total]).toEqual([0, 1]);
+  });
+
+  it('counts only scheduled appointments as live bookings', async () => {
+    const at = day('2026-11-02').toISOString();
+    const r = new MockJaneRepository({
+      appointments: [
+        { specialty: 'Couples', status: 'scheduled', scheduledAt: at },
+        { specialty: 'Couples', status: 'cancelled', scheduledAt: at },
+        { specialty: 'Couples', status: 'noShow', scheduledAt: at },
+        { specialty: 'Couples', status: 'completed', scheduledAt: at },
+      ],
+      inquiries: [],
+      clinicians: [],
+      waitlist: [],
+    });
+    const agg = await r.queryBookings({ from: day('2026-11-01'), to: day('2026-11-15') });
+    expect(agg.bySpecialty).toEqual([{ specialty: 'Couples', count: 4 }]);
+    expect(agg.liveBookingsBySpecialty).toEqual([{ specialty: 'Couples', count: 1 }]);
+  });
+
   it('clamps a pre-window start and flags the clamped start', async () => {
     const agg = await repo.queryBookings({ from: day('2020-01-01'), to: day('2026-08-16') });
     expect(agg.clampedStart).toBeInstanceOf(Date);
@@ -65,7 +104,7 @@ describe('mock Jane repository', () => {
 describe('use cases over the committed seed', () => {
   it('returns a booked percentage for each capacity specialty over the forward window', async () => {
     const result = await getBookedPercentBySpecialty(repo);
-    expect(result.map((r) => r.specialty)).toEqual([...CAPACITY_SPECIALTIES]);
+    expect(result.map((r) => r.specialty)).toEqual([...SPECIALTIES]);
     for (const r of result) {
       expect(r.state).toBe('booked');
       if (r.state === 'booked') {
@@ -78,7 +117,7 @@ describe('use cases over the committed seed', () => {
   it('reports a non-zero waitlist with a dominant specialty', async () => {
     const waitlist = await getWaitlist(repo);
     expect(waitlist.total).toBeGreaterThan(0);
-    expect(CAPACITY_SPECIALTIES).toContain(waitlist.dominantSpecialty);
+    expect(SPECIALTIES).toContain(waitlist.dominantSpecialty);
   });
 
   it('reports a measured inquiry-to-first-session average greater than zero', async () => {

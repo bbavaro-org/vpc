@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import {
   SEED,
-  REFERENCE_NOW,
   SPECIALTIES,
+  REFERENCE_NOW,
   WINDOW_DAYS,
   FORWARD_DAYS,
   generateStore,

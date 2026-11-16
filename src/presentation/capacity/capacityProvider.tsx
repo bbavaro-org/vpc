@@ -1,6 +1,6 @@
 import type { BookingRepository } from '../../domain';
 import { getBookedPercentBySpecialty, getWaitlist } from '../../application/capacity';
-import { REFERENCE_NOW } from '../../infrastructure/referenceNow';
+import { REFERENCE_NOW } from '../../domain/referenceNow';
 import type { PanelViewModel } from '../shell/provider';
 import { CapacityPanel } from './CapacityPanel';
 

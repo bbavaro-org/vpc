@@ -1,5 +1,5 @@
 import { getHeadlineMetrics, type HeadlineDeps } from '../../application/headline';
-import { REFERENCE_NOW } from '../../infrastructure/referenceNow';
+import { REFERENCE_NOW } from '../../domain/referenceNow';
 import type { PanelViewModel } from '../shell/provider';
 import { HeadlineCards } from './HeadlineCards';
 

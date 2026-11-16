@@ -18,6 +18,8 @@ export interface SpecialtyCount {
 
 export interface BookingAggregate extends AppointmentAggregate {
   readonly bySpecialty: readonly SpecialtyCount[];
+  /** Scheduled (live) appointments in range per specialty; excludes completed, cancelled and no-show. */
+  readonly liveBookingsBySpecialty: readonly SpecialtyCount[];
   /** Present-state snapshot: clients still waiting as of `range.to`. */
   readonly waitlistBySpecialty: readonly SpecialtyCount[];
   readonly weeklyCapacity: number;

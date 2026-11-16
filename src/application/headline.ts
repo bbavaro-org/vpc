@@ -5,7 +5,7 @@ import {
   type InquiryAggregate,
 } from '../domain/aggregates';
 import type { BookingRepository, InquiryRepository } from '../domain/repositories';
-import { REFERENCE_NOW } from '../infrastructure/referenceNow';
+import { REFERENCE_NOW } from '../domain/referenceNow';
 
 const DAY_MS = 86_400_000;
 export const PERIOD_DAYS = 30;

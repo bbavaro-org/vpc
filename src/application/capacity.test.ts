@@ -1,13 +1,17 @@
 import { describe, expect, it } from 'vitest';
 import type { BookingAggregate, BookingRepository } from '../domain';
-import { CAPACITY_SPECIALTIES, getBookedPercentBySpecialty, getWaitlist } from './capacity';
-import { REFERENCE_NOW } from '../infrastructure/referenceNow';
+import { getBookedPercentBySpecialty, getWaitlist } from './capacity';
+import { REFERENCE_NOW, SPECIALTIES } from '../domain';
 
 const now = new Date('2026-11-16T00:00:00Z');
 const agg: BookingAggregate = {
   range: { from: now, to: now },
   byStatus: { scheduled: 0, completed: 0, cancelled: 0, noShow: 0 },
   bySpecialty: [
+    { specialty: 'Adult Anxiety', count: 10 },
+    { specialty: 'Couples', count: 0 },
+  ],
+  liveBookingsBySpecialty: [
     { specialty: 'Adult Anxiety', count: 10 },
     { specialty: 'Couples', count: 0 },
   ],
@@ -25,7 +29,7 @@ const repo: BookingRepository = { queryBookings: async () => agg };
 
 describe('capacity use cases', () => {
   it('uses the capacity specialty vocabulary', () => {
-    expect([...CAPACITY_SPECIALTIES]).toEqual(['Child/Youth', 'Adult Anxiety', 'Couples', 'Assessments']);
+    expect([...SPECIALTIES]).toEqual(['Child/Youth', 'Adult Anxiety', 'Couples', 'Assessments']);
   });
   it('queries a forward two-week window from now', async () => {
     const ranges: { from: Date; to: Date }[] = [];
@@ -59,6 +63,18 @@ describe('capacity use cases', () => {
       bookedPercent: 50,
     });
     expect(r.find((x) => x.specialty === 'Couples')).toMatchObject({ bookedPercent: 0 });
+  });
+  it('ignores cancelled, no-show and completed appointments in booked percent', async () => {
+    const mixed: BookingRepository = {
+      queryBookings: async () => ({
+        ...agg,
+        byStatus: { scheduled: 10, completed: 4, cancelled: 3, noShow: 2 },
+        bySpecialty: [{ specialty: 'Adult Anxiety', count: 19 }],
+        liveBookingsBySpecialty: [{ specialty: 'Adult Anxiety', count: 10 }],
+      }),
+    };
+    const r = await getBookedPercentBySpecialty(mixed, now);
+    expect(r.find((x) => x.specialty === 'Adult Anxiety')).toMatchObject({ bookedPercent: 50 });
   });
   it('reports no-capacity instead of 0% booked', async () => {
     const r = await getBookedPercentBySpecialty(repo, now);

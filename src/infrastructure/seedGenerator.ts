@@ -1,7 +1,7 @@
-import type { Appointment, AppointmentStatus, Clinician, IntakeStage, Inquiry, WaitlistEntry } from '../domain/entities';
-import { REFERENCE_NOW } from './referenceNow';
+import { SPECIALTIES, type Specialty, type Appointment, type AppointmentStatus, type Clinician, type IntakeStage, type Inquiry, type WaitlistEntry } from '../domain/entities';
+import { REFERENCE_NOW } from '../domain/referenceNow';
 
-export { REFERENCE_NOW };
+export { REFERENCE_NOW, SPECIALTIES };
 export const SEED = 20260101;
 /** Days of history before REFERENCE_NOW: feeds the headline 30-day and prior-30-day comparison. */
 export const WINDOW_DAYS = 90;
@@ -10,7 +10,6 @@ export const FORWARD_DAYS = 14;
 
 const DAY = 86_400_000;
 const HOUR = 3_600_000;
-export const SPECIALTIES = ['Child/Youth', 'Adult Anxiety', 'Couples', 'Assessments'] as const;
 const SOURCES = ['website', 'referral', 'phone', 'insurance', 'walk-in'];
 const STAGE_WEIGHTS: readonly (readonly [IntakeStage, number])[] = [
   ['new', 15],
@@ -20,7 +19,7 @@ const STAGE_WEIGHTS: readonly (readonly [IntakeStage, number])[] = [
   ['closed', 15],
 ];
 // Child/Youth carries the longest waitlist.
-const WAITLIST_WEIGHTS: readonly (readonly [string, number])[] = [
+const WAITLIST_WEIGHTS: readonly (readonly [Specialty, number])[] = [
   ['Child/Youth', 50],
   ['Assessments', 25],
   ['Adult Anxiety', 15],
@@ -68,7 +67,7 @@ export function generateStore(seed: number): Store {
 
   const clinicians: Clinician[] = Array.from({ length: 8 }, (_, i) => ({
     id: `cl-${String(i + 1).padStart(3, '0')}`,
-    specialty: SPECIALTIES[i % SPECIALTIES.length] as string,
+    specialty: SPECIALTIES[i % SPECIALTIES.length] as Specialty,
     weeklyCapacity: int(8, 11),
   }));
 

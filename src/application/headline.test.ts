@@ -18,6 +18,7 @@ const bookingAgg = (byStatus: BookingAggregate['byStatus']): BookingAggregate =>
   range,
   byStatus,
   bySpecialty: [],
+  liveBookingsBySpecialty: [],
   waitlistBySpecialty: [],
   weeklyCapacity: 20,
   weeklyCapacityBySpecialty: [],

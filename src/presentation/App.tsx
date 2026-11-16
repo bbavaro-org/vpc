@@ -1,5 +1,5 @@
 import { MockJaneRepository } from '../infrastructure/mockJane';
-import { REFERENCE_NOW } from '../infrastructure/referenceNow';
+import { REFERENCE_NOW } from '../domain/referenceNow';
 import { capacityLoader } from './capacity/capacityProvider';
 import { headlineLoader } from './headline/headlineProvider';
 import { DashboardShell } from './shell/DashboardShell';
