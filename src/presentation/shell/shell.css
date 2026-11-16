@@ -1,0 +1,12 @@
+.dashboard-nav-link {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.dashboard-nav-link:hover {
+  color: var(--green-deep);
+}

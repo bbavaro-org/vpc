@@ -1,3 +1,4 @@
+import "./shell.css";
 // Served from public/ so dev and production resolve the same URL.
 const logoUrl = "/vpc-logo.png";
 import { PanelSlot } from "./PanelSlot";
@@ -35,8 +36,8 @@ export function DashboardShell({
           <img
             src={logoUrl}
             alt="Vancouver Psychology Centre"
-            width={175}
-            height={42}
+            height={53}
+            style={{ height: 53, width: "auto" }}
           />
         </h1>
         <nav aria-label="Dashboard sections">
@@ -44,7 +45,7 @@ export function DashboardShell({
             style={{
               display: "flex",
               flexWrap: "wrap",
-              gap: "var(--space-6)",
+              gap: "var(--space-8)",
               listStyle: "none",
               margin: 0,
               padding: 0,
@@ -53,8 +54,7 @@ export function DashboardShell({
             {SLOT_IDS.map((id) => (
               <li key={id}>
                 <a
-                  className="text-button-small"
-                  style={{ color: "var(--green-deep)", textDecoration: "none" }}
+                  className="dashboard-nav-link"
                   href={`#slot-${id}-title`}
                 >
                   {SLOT_TITLES[id]}
