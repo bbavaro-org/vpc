@@ -44,7 +44,7 @@ export interface Store {
 }
 
 // mulberry32: small deterministic PRNG.
-function prng(seed: number): () => number {
+export function prng(seed: number): () => number {
   let a = seed >>> 0;
   return () => {
     a = (a + 0x6d2b79f5) >>> 0;
