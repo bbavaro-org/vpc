@@ -1,14 +1,9 @@
 import type { ReactNode } from 'react';
+import { PANEL_IDS, type PanelId } from '../../domain';
 
-export const SLOT_IDS = [
-  'headline-metrics',
-  'intake-funnel',
-  'lead-sources',
-  'clinician-capacity',
-  'automation-impact',
-] as const;
+export const SLOT_IDS = PANEL_IDS;
 
-export type SlotId = (typeof SLOT_IDS)[number];
+export type SlotId = PanelId;
 
 export const SLOT_TITLES: Readonly<Record<SlotId, string>> = {
   'headline-metrics': 'Headline metrics',
