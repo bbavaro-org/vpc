@@ -18,6 +18,7 @@ export interface SpecialtyCount {
 
 export interface BookingAggregate extends AppointmentAggregate {
   readonly bySpecialty: readonly SpecialtyCount[];
+  /** Present-state snapshot: clients still waiting as of `range.to`. */
   readonly waitlistBySpecialty: readonly SpecialtyCount[];
   readonly weeklyCapacity: number;
   readonly weeklyCapacityBySpecialty: readonly SpecialtyCount[];
@@ -28,6 +29,8 @@ export interface InquiryAggregate {
   readonly bySource: Readonly<Record<string, number>>;
   readonly byStage: Readonly<Record<IntakeStage, number>>;
   readonly total: number;
+  /** Mean days from inquiry to first session over converted inquiries; null when none converted. */
+  readonly averageDaysToFirstSession: number | null;
 }
 
 export function totalAppointments(agg: AppointmentAggregate): number {

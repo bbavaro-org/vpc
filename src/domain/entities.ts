@@ -16,6 +16,8 @@ export interface Inquiry {
   readonly source: string;
   readonly receivedAt: Date;
   readonly intakeStage: IntakeStage;
+  /** Date of the client's first session; null until the inquiry converts to a booking. */
+  readonly firstSessionAt: Date | null;
 }
 
 export interface Clinician {
@@ -28,4 +30,6 @@ export interface WaitlistEntry {
   readonly id: string;
   readonly specialty: Specialty;
   readonly addedAt: Date;
+  /** When the client left the waitlist; null while still waiting. */
+  readonly removedAt: Date | null;
 }

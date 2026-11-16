@@ -10,9 +10,14 @@ import storeJson from './seed-data/store.json';
 
 interface RawStore {
   appointments: { specialty: string; status: AppointmentStatus; scheduledAt: string }[];
-  inquiries: { source: string; receivedAt: string; intakeStage: IntakeStage }[];
+  inquiries: {
+    source: string;
+    receivedAt: string;
+    intakeStage: IntakeStage;
+    firstSessionAt: string | null;
+  }[];
   clinicians: { specialty: string; weeklyCapacity: number }[];
-  waitlist: { specialty: string; addedAt: string }[];
+  waitlist: { specialty: string; addedAt: string; removedAt: string | null }[];
 }
 
 /** Set when the requested start precedes the seeded history; holds the effective start used. */
@@ -23,6 +28,7 @@ export interface ClampInfo {
 export type MockBookingAggregate = BookingAggregate & ClampInfo;
 export type MockInquiryAggregate = InquiryAggregate & ClampInfo;
 
+const DAY_MS = 86_400_000;
 const STATUSES: readonly AppointmentStatus[] = ['scheduled', 'completed', 'cancelled', 'noShow'];
 const STAGES: readonly IntakeStage[] = ['new', 'contacted', 'assessment', 'booked', 'closed'];
 
@@ -39,6 +45,24 @@ function clamp(range: DateRange, windowStart: number): { range: DateRange } & Cl
 function inRange(iso: string, range: DateRange): boolean {
   const t = Date.parse(iso);
   return t >= range.from.getTime() && t <= range.to.getTime();
+}
+
+/** Present-state snapshot: added on or before `at` and not yet removed by `at`. */
+function waitingAt(entry: { addedAt: string; removedAt: string | null }, at: Date): boolean {
+  return (
+    Date.parse(entry.addedAt) <= at.getTime() &&
+    (entry.removedAt === null || Date.parse(entry.removedAt) > at.getTime())
+  );
+}
+
+function averageDaysToFirstSession(
+  rows: readonly { receivedAt: string; firstSessionAt: string | null }[],
+): number | null {
+  const waits = rows.flatMap((r) =>
+    r.firstSessionAt === null ? [] : [(Date.parse(r.firstSessionAt) - Date.parse(r.receivedAt)) / DAY_MS],
+  );
+  if (waits.length === 0) return null;
+  return Math.round((waits.reduce((sum, w) => sum + w, 0) / waits.length) * 100) / 100;
 }
 
 function toCounts(counts: Map<string, number>): SpecialtyCount[] {
@@ -78,7 +102,7 @@ export class MockJaneRepository implements BookingRepository, InquiryRepository 
     const byStatus = Object.fromEntries(
       STATUSES.map((s) => [s, appts.filter((a) => a.status === s).length]),
     ) as Record<AppointmentStatus, number>;
-    const waiting = this.store.waitlist.filter((w) => inRange(w.addedAt, range));
+    const waiting = this.store.waitlist.filter((w) => waitingAt(w, range.to));
     return {
       range,
       byStatus,
@@ -104,6 +128,7 @@ export class MockJaneRepository implements BookingRepository, InquiryRepository 
       bySource: Object.fromEntries(tally(rows.map((i) => i.source))),
       byStage,
       total: rows.length,
+      averageDaysToFirstSession: averageDaysToFirstSession(rows),
       ...(clampedStart ? { clampedStart } : {}),
     };
   }

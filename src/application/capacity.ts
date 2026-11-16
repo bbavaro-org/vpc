@@ -1,6 +1,7 @@
 import type { BookingRepository, DateRange, SpecialtyCount } from '../domain';
+import { REFERENCE_NOW } from '../infrastructure/referenceNow';
 
-export const CAPACITY_SPECIALTIES = ['Child/Youth', 'Anxiety', 'Couples', 'Assessments'] as const;
+export const CAPACITY_SPECIALTIES = ['Child/Youth', 'Adult Anxiety', 'Couples', 'Assessments'] as const;
 export const WINDOW_WEEKS = 2;
 const WINDOW_MS = WINDOW_WEEKS * 7 * 24 * 60 * 60 * 1000;
 
@@ -23,7 +24,7 @@ function countOf(counts: readonly SpecialtyCount[], specialty: string): number {
 
 export async function getBookedPercentBySpecialty(
   repo: BookingRepository,
-  now: Date,
+  now: Date = REFERENCE_NOW,
 ): Promise<SpecialtyBooking[]> {
   const agg = await repo.queryBookings(forwardWindow(now));
   return CAPACITY_SPECIALTIES.map((specialty): SpecialtyBooking => {
@@ -34,8 +35,12 @@ export async function getBookedPercentBySpecialty(
   });
 }
 
-export async function getWaitlist(repo: BookingRepository, now: Date): Promise<Waitlist> {
-  const agg = await repo.queryBookings(forwardWindow(now));
+/** Who is waiting as of `now`: the booking aggregate's waitlist is a snapshot at the range end. */
+export async function getWaitlist(
+  repo: BookingRepository,
+  now: Date = REFERENCE_NOW,
+): Promise<Waitlist> {
+  const agg = await repo.queryBookings({ from: now, to: now });
   const list = agg.waitlistBySpecialty;
   const total = list.reduce((sum, c) => sum + c.count, 0);
   const top = list.reduce<SpecialtyCount | null>((a, c) => (!a || c.count > a.count ? c : a), null);

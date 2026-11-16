@@ -1,5 +1,11 @@
-import type { BookingAggregate, DateRange, InquiryAggregate } from '../domain/aggregates';
+import {
+  totalAppointments,
+  type BookingAggregate,
+  type DateRange,
+  type InquiryAggregate,
+} from '../domain/aggregates';
 import type { BookingRepository, InquiryRepository } from '../domain/repositories';
+import { REFERENCE_NOW } from '../infrastructure/referenceNow';
 
 const DAY_MS = 86_400_000;
 export const PERIOD_DAYS = 30;
@@ -57,13 +63,12 @@ function figures(bookings: BookingAggregate, inquiries: InquiryAggregate): Perio
   const held = byStatus.completed + byStatus.noShow;
   const used = held + byStatus.scheduled;
   const capacity = bookings.weeklyCapacity * (spanDays(bookings.range) / 7);
-  // Little's law over inquiry aggregates: average wait = open pipeline / arrival rate.
-  const open = inquiries.byStage.new + inquiries.byStage.contacted + inquiries.byStage.assessment;
-  const days = spanDays(inquiries.range);
   return {
     newInquiries: inquiries.total,
-    inquiryToFirstSessionDays: ratio(open * days, inquiries.total, 1),
-    utilizationPercent: ratio(used, capacity, 100),
+    inquiryToFirstSessionDays:
+      inquiries.averageDaysToFirstSession === null ? null : round1(inquiries.averageDaysToFirstSession),
+    // No appointments at all is no data; capacity with no live bookings is a genuine 0%.
+    utilizationPercent: totalAppointments(bookings) === 0 ? null : ratio(used, capacity, 100),
     noShowRatePercent: ratio(byStatus.noShow, held, 100),
   };
 }
@@ -85,7 +90,7 @@ function bandStatus(value: number | null): BandStatus | null {
 /** Computes the four headline figures for the 30 days ending at `now` and the 30 days before. */
 export async function getHeadlineMetrics(
   deps: HeadlineDeps,
-  now: Date,
+  now: Date = REFERENCE_NOW,
 ): Promise<HeadlineMetrics> {
   const currentRange = { from: new Date(now.getTime() - PERIOD_DAYS * DAY_MS), to: now };
   const priorRange = {

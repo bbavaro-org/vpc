@@ -1,9 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { MockJaneRepository } from './mockJane';
+import { REFERENCE_NOW } from './referenceNow';
 import { totalAppointments } from '../domain/aggregates';
+import { CAPACITY_SPECIALTIES, getBookedPercentBySpecialty, getWaitlist } from '../application/capacity';
+import { getHeadlineMetrics } from '../application/headline';
 
 const repo = new MockJaneRepository();
 const day = (s: string) => new Date(`${s}T00:00:00.000Z`);
+const DAY = 86_400_000;
+const sum = (counts: readonly { count: number }[]) => counts.reduce((n, c) => n + c.count, 0);
 
 describe('mock Jane repository', () => {
   it('returns aggregates with counts and no name or note fields', async () => {
@@ -16,12 +21,22 @@ describe('mock Jane repository', () => {
     expect(JSON.stringify(inq)).not.toMatch(/name|note|"id"/i);
   });
 
+  it('exposes the first-session figure as an average number with no raw timestamps', async () => {
+    const forward = { from: REFERENCE_NOW, to: new Date(REFERENCE_NOW.getTime() + 14 * DAY) };
+    const inq = await repo.queryInquiries({ from: day('2026-08-04'), to: REFERENCE_NOW });
+    const json = JSON.stringify([await repo.queryBookings(forward), inq]);
+    expect(json).not.toMatch(/scheduledAt|bookedAt|receivedAt|firstSessionAt|addedAt|removedAt/);
+    expect(typeof inq.averageDaysToFirstSession).toBe('number');
+    expect(inq.averageDaysToFirstSession).toBeGreaterThan(0);
+  });
+
   it('returns zero counts for a range with no appointments', async () => {
     const agg = await repo.queryBookings({ from: day('2030-01-01'), to: day('2030-01-07') });
     expect(totalAppointments(agg)).toBe(0);
     expect(agg.bySpecialty).toEqual([]);
     const inq = await repo.queryInquiries({ from: day('2030-01-01'), to: day('2030-01-07') });
     expect(inq.total).toBe(0);
+    expect(inq.averageDaysToFirstSession).toBeNull();
   });
 
   it('clamps a pre-window start and flags the clamped start', async () => {
@@ -32,5 +47,44 @@ describe('mock Jane repository', () => {
     expect(totalAppointments(agg)).toBeGreaterThan(0);
     const inq = await repo.queryInquiries({ from: day('2020-01-01'), to: day('2026-08-16') });
     expect(inq.clampedStart).toBeInstanceOf(Date);
+  });
+
+  it('reports the waitlist as a snapshot at the range end, independent of the range start', async () => {
+    const now = await repo.queryBookings({ from: REFERENCE_NOW, to: REFERENCE_NOW });
+    expect(sum(now.waitlistBySpecialty)).toBeGreaterThan(0);
+    const narrow = await repo.queryBookings({
+      from: new Date(REFERENCE_NOW.getTime() + 13 * DAY),
+      to: new Date(REFERENCE_NOW.getTime() + 14 * DAY),
+    });
+    expect(narrow.waitlistBySpecialty).toEqual(now.waitlistBySpecialty);
+    const earlier = await repo.queryBookings({ from: day('2026-08-04'), to: day('2026-08-10') });
+    expect(earlier.waitlistBySpecialty).not.toEqual(now.waitlistBySpecialty);
+  });
+});
+
+describe('use cases over the committed seed', () => {
+  it('returns a booked percentage for each capacity specialty over the forward window', async () => {
+    const result = await getBookedPercentBySpecialty(repo);
+    expect(result.map((r) => r.specialty)).toEqual([...CAPACITY_SPECIALTIES]);
+    for (const r of result) {
+      expect(r.state).toBe('booked');
+      if (r.state === 'booked') {
+        expect(r.bookedPercent).toBeGreaterThan(0);
+        expect(r.bookedPercent).toBeLessThanOrEqual(100);
+      }
+    }
+  });
+
+  it('reports a non-zero waitlist with a dominant specialty', async () => {
+    const waitlist = await getWaitlist(repo);
+    expect(waitlist.total).toBeGreaterThan(0);
+    expect(CAPACITY_SPECIALTIES).toContain(waitlist.dominantSpecialty);
+  });
+
+  it('reports a measured inquiry-to-first-session average greater than zero', async () => {
+    const m = await getHeadlineMetrics({ bookings: repo, inquiries: repo });
+    expect(m.inquiryToFirstSessionDays.current).toBeGreaterThan(0);
+    expect(m.inquiryToFirstSessionDays.prior).toBeGreaterThan(0);
+    expect(m.clinicianUtilizationPercent.current).toBeGreaterThan(0);
   });
 });
