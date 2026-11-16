@@ -1,4 +1,5 @@
-import logoUrl from "../../../design-system/vpc-logo.png";
+// Served from public/ so dev and production resolve the same URL.
+const logoUrl = "/vpc-logo.png";
 import { PanelSlot } from "./PanelSlot";
 import { SLOT_IDS, SLOT_TITLES, type DashboardProvider } from "./provider";
 
