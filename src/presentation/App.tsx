@@ -1,3 +1,5 @@
+import { DashboardShell } from './shell/DashboardShell';
+
 export function App() {
-  return <div className="app-root" />;
+  return <DashboardShell provider={{}} />;
 }
