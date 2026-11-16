@@ -1,11 +1,60 @@
-import { useEffect, useState } from "react";
+import { Component, useEffect, useState, type ReactNode } from "react";
 import {
   resolveSlot,
   SLOT_TITLES,
   type DashboardProvider,
+  type PanelViewModel,
   type SlotId,
   type SlotState,
 } from "./provider";
+
+function SlotError({ slot, message }: { slot: SlotId; message: string }) {
+  return (
+    <p role="alert">
+      Could not load {SLOT_TITLES[slot].toLowerCase()}: {message}
+    </p>
+  );
+}
+
+/** Isolates a throw from one slot's render() so the other slots keep rendering. */
+export class SlotErrorBoundary extends Component<
+  { slot: SlotId; children?: ReactNode },
+  { error: unknown; failed: boolean }
+> {
+  state = { error: undefined as unknown, failed: false };
+
+  static getDerivedStateFromError(error: unknown) {
+    return { error, failed: true };
+  }
+
+  componentDidCatch(error: unknown) {
+    console.error(`Panel slot "${this.props.slot}" failed to render`, error);
+  }
+
+  render() {
+    if (!this.state.failed) return this.props.children;
+    const { error } = this.state;
+    return (
+      <SlotError
+        slot={this.props.slot}
+        message={error instanceof Error ? error.message : "Unknown error"}
+      />
+    );
+  }
+}
+
+function ReadyBody({ viewModel }: { viewModel: PanelViewModel }) {
+  if (viewModel.render) return <>{viewModel.render()}</>;
+  return (
+    <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+      {viewModel.items.map((item) => (
+        <li key={item.label}>
+          {item.label}: <strong>{item.value}</strong>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export function PanelSlotView({
   slot,
@@ -40,21 +89,12 @@ export function PanelSlotView({
         {state.status === "loading" && <p role="status">Loading…</p>}
         {state.status === "empty" && <p>No data yet.</p>}
         {state.status === "error" && (
-          <p role="alert">
-            Could not load {SLOT_TITLES[slot].toLowerCase()}: {state.message}
-          </p>
+          <SlotError slot={slot} message={state.message} />
         )}
-        {state.status === "ready" &&
-          state.viewModel.render &&
-          state.viewModel.render()}
-        {state.status === "ready" && !state.viewModel.render && (
-          <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-            {state.viewModel.items.map((item) => (
-              <li key={item.label}>
-                {item.label}: <strong>{item.value}</strong>
-              </li>
-            ))}
-          </ul>
+        {state.status === "ready" && (
+          <SlotErrorBoundary slot={slot}>
+            <ReadyBody viewModel={state.viewModel} />
+          </SlotErrorBoundary>
         )}
       </div>
     </section>

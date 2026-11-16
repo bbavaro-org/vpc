@@ -1,7 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { renderToString } from "react-dom/server";
 import { DashboardShell } from "./DashboardShell";
-import { PanelSlotView } from "./PanelSlot";
+import { PanelSlotView, SlotErrorBoundary } from "./PanelSlot";
 import { resolveSlot, SLOT_IDS, type DashboardProvider } from "./provider";
 
 const ok = async () => ({ items: [{ label: "Leads", value: "42" }] });
@@ -68,5 +68,45 @@ describe("dashboard shell", () => {
       <PanelSlotView slot="lead-sources" state={states[2]!} />,
     );
     expect(okHtml).toContain("42");
+  });
+
+  it("logs the failing slot id and original error when a loader rejects", async () => {
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const boom = new Error("boom");
+    const state = await resolveSlot(
+      {
+        "intake-funnel": async () => {
+          throw boom;
+        },
+      },
+      "intake-funnel",
+    );
+    expect(state).toEqual({ status: "error", message: "boom" });
+    expect(spy).toHaveBeenCalledWith(expect.stringContaining("intake-funnel"), boom);
+    spy.mockRestore();
+  });
+
+  it("isolates a throwing render(): that slot shows an alert, siblings still render", () => {
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const boom = new Error("render exploded");
+    // Server rendering has no error boundaries, so drive the boundary through its lifecycle.
+    const boundary = new SlotErrorBoundary({ slot: "lead-sources" });
+    boundary.state = SlotErrorBoundary.getDerivedStateFromError(boom);
+    boundary.componentDidCatch(boom);
+    expect(spy).toHaveBeenCalledWith(expect.stringContaining("lead-sources"), boom);
+    const failed = renderToString(<>{boundary.render()}</>);
+    expect(failed).toContain('role="alert"');
+    expect(failed).toContain("render exploded");
+
+    const ready = (slot: "headline-metrics" | "intake-funnel") =>
+      renderToString(
+        <PanelSlotView
+          slot={slot}
+          state={{ status: "ready", viewModel: { items: [{ label: "Leads", value: "42" }] } }}
+        />,
+      );
+    expect(ready("headline-metrics")).toContain("Leads");
+    expect(ready("intake-funnel")).toContain("42");
+    spy.mockRestore();
   });
 });

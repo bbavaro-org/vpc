@@ -50,6 +50,7 @@ export async function resolveSlot(provider: DashboardProvider, slot: SlotId): Pr
     if (viewModel.items.length === 0) return { status: 'empty' };
     return { status: 'ready', viewModel };
   } catch (err) {
+    console.error(`Panel slot "${slot}" failed to load`, err);
     return { status: 'error', message: err instanceof Error ? err.message : 'Unknown error' };
   }
 }

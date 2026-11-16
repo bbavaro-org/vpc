@@ -11,7 +11,7 @@ Captured from the live CSS of vancouverpsychologycentre.com on November 16, 2026
 | `tokens.json` | Every token with its value and a usage note | Source of truth. Read the `usage` field before choosing a token. |
 | `tokens.css` | The same tokens as CSS custom properties, plus `.text-*` classes for each text style | Import once at the app root: `@import "./design-system/tokens.css";` |
 | `components.css` | Styles for the components below (classes prefixed `vpc-`) | Import after `tokens.css`. Fonts are self-hosted by the app. |
-| `vpc-logo.png` | The logo (350 × 84px; display at 175 × 42px) | Place on `white` or `lime-soft` only. Do not redraw or recolor it. |
+| `vpc-logo.png` | The logo (350 × 84px; display at 175 × 42px in content, 53px tall with auto width in the dashboard header) | Place on `white` or `lime-soft` only. Do not redraw or recolor it. |
 | `DESIGN.md` | This guide | |
 
 ## Brand in one paragraph
@@ -104,6 +104,8 @@ Never bold the serif.
 <div class="vpc-eyebrow">Getting started</div>
 <h2 class="vpc-h2">Simple from the first message.</h2>
 ```
+
+**Header navigation links**: Inter 15px, weight 400, color `var(--ink-2)`, `var(--green-deep)` on hover. Matches the live site; the 15px size is a literal with no token.
 
 ## Imagery and icons
 
