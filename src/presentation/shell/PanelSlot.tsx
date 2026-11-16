@@ -78,7 +78,6 @@ export function PanelSlotView({
         minHeight: 160,
       }}
     >
-      <div className="vpc-eyebrow">Panel</div>
       <h2 id={`slot-${slot}-title`} className="vpc-h2 text-heading-3">
         {SLOT_TITLES[slot]}
       </h2>

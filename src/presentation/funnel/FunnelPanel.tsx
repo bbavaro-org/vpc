@@ -63,7 +63,7 @@ export function FunnelPanel({ funnel }: { funnel: IntakeFunnel }) {
                     width: `${(s.count / max) * 100}%`,
                     height: '100%',
                     borderRadius: 'var(--radius-pill)',
-                    background: largest ? 'var(--ink)' : 'var(--lime)',
+                    background: 'var(--lime)',
                   }}
                 />
               </div>
