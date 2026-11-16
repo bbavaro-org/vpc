@@ -1,0 +1,45 @@
+/* Vancouver Psychology Centre — generated from tokens.json */
+:root {
+  --ink: #2A3010;
+  --ink-2: #445228;
+  --muted: #6B7A50;
+  --green-deep: #4C6417;
+  --lime: #99C72E;
+  --lime-deep: #80A626;
+  --lime-mid: #C8E68A;
+  --lime-soft: #EEF5D0;
+  --line: #D9E0C4;
+  --snow: #F5F7F1;
+  --footer-bg: #F2F5EA;
+  --footer-mid: #E6ECDA;
+  --trust-bg: #F4F2EA;
+  --white: #FFFFFF;
+  --logo-lime: #A9CF52;
+  --logo-gray: #A6ABB1;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-20: 80px;
+  --max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+  --radius-pill: 100px;
+  --shadow-card: 0 8px 32px rgba(76, 100, 23, 0.16);
+}
+.text-display { font-family: var(--font-serif); font-size: 82px; line-height: 84px; font-weight: 400; letter-spacing: -0.02em; }
+.text-heading-2 { font-family: var(--font-serif); font-size: 28.7px; line-height: 33px; font-weight: 400; letter-spacing: -0.02em; }
+.text-heading-3 { font-family: var(--font-serif); font-size: 20px; line-height: 21.4px; font-weight: 400; letter-spacing: -0.02em; }
+.text-lead { font-family: var(--font-sans); font-size: 18.4px; line-height: 27.6px; font-weight: 400; }
+.text-body { font-family: var(--font-sans); font-size: 17px; line-height: 28px; font-weight: 400; }
+.text-button { font-family: var(--font-sans); font-size: 16.5px; line-height: 20px; font-weight: 600; }
+.text-button-small { font-family: var(--font-sans); font-size: 13.5px; line-height: 18px; font-weight: 600; }
+.text-tag { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 500; }
+.text-eyebrow { font-family: var(--font-sans); font-size: 11px; line-height: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }

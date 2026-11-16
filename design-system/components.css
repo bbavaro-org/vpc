@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400;1,8..60,500&family=Inter:wght@400;500;600;700&display=swap");
+body { margin: 0; font-family: var(--font-sans, "Inter", sans-serif); background: var(--white); color: var(--ink); }
+.vpc-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; padding: var(--space-4); }
+.vpc-btn { display: inline-flex; align-items: center; gap: var(--space-2); font-family: inherit; font-size: 16.5px; font-weight: 600; line-height: 20px; padding: 15px 33px; border-radius: var(--radius-pill); border: 0; background: var(--lime); color: var(--ink); text-decoration: none; cursor: pointer; }
+.vpc-btn:hover { background: var(--lime-deep); }
+.vpc-btn-ghost { background: transparent; color: var(--green-deep); border: 1.5px solid var(--green-deep); padding: 14px 31px; font-weight: 500; }
+.vpc-btn-ghost:hover { background: var(--lime-soft); }
+.vpc-btn-small { font-size: 13.5px; line-height: 18px; padding: 8px 14px; }
+.vpc-btn:focus-visible { outline: 2px solid var(--green-deep); outline-offset: 3px; }
+.vpc-tag { display: inline-block; font-size: 12px; font-weight: 500; line-height: 16px; padding: 3px 10px; border-radius: var(--radius-xl); background: var(--lime-soft); color: var(--green-deep); }
+.vpc-eyebrow { font-size: 11px; font-weight: 700; line-height: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lime-deep); }
+.vpc-h2 { font-family: var(--font-serif, "Source Serif 4", serif); font-weight: 400; font-size: 28.7px; line-height: 33px; letter-spacing: -0.02em; margin: var(--space-2) 0 0; color: var(--ink); }
+.vpc-card { position: relative; width: 156px; height: 236px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card); background: var(--green-deep); color: var(--white); display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center; padding: var(--space-4); box-sizing: border-box; text-decoration: none; }
+.vpc-card-title { font-family: var(--font-serif, "Source Serif 4", serif); font-size: 20px; line-height: 22px; letter-spacing: -0.02em; margin: 0; color: var(--white); }
+.vpc-card-sub { font-size: 13px; line-height: 18px; margin: var(--space-1) 0 var(--space-3); color: var(--white); }
+.vpc-card-cta { display: inline-flex; gap: 6px; font-size: 13px; font-weight: 700; padding: 11px 18px; border-radius: var(--radius-pill); background: var(--lime); color: var(--ink); }
