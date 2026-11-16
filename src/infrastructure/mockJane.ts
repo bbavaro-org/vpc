@@ -6,6 +6,7 @@ import type {
 } from '../domain/aggregates';
 import type { AppointmentStatus, IntakeStage, Specialty } from '../domain/entities';
 import type { BookingRepository, InquiryRepository } from '../domain/repositories';
+import { DAY_MS } from '../domain/period';
 import storeJson from './seed-data/store.json';
 
 interface RawStore {
@@ -28,7 +29,6 @@ export interface ClampInfo {
 export type MockBookingAggregate = BookingAggregate & ClampInfo;
 export type MockInquiryAggregate = InquiryAggregate & ClampInfo;
 
-const DAY_MS = 86_400_000;
 const STATUSES: readonly AppointmentStatus[] = ['scheduled', 'completed', 'cancelled', 'noShow'];
 const STAGES: readonly IntakeStage[] = ['inquiry', 'intakeCompleted', 'matched', 'booked', 'closed'];
 

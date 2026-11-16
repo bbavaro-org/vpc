@@ -1,7 +1,4 @@
-import { REFERENCE_NOW, type DateRange, type InquiryRepository, type IntakeStage } from '../domain';
-import { PERIOD_DAYS } from './headline';
-
-const DAY_MS = 86_400_000;
+import { REFERENCE_NOW, lastPeriod, type InquiryRepository, type IntakeStage } from '../domain';
 
 export const FUNNEL_STAGES: ReadonlyArray<{ readonly stage: IntakeStage; readonly label: string }> = [
   { stage: 'inquiry', label: 'Inquiries' },
@@ -61,14 +58,19 @@ export function buildFunnel(counts: readonly number[], total: number = counts[0]
   return { total, stages, gaps };
 }
 
+/**
+ * Cumulative reached-stage funnel: the first stage is every inquiry received in the period,
+ * including closed ones; each later stage counts inquiries currently at that stage or any later
+ * forward stage.
+ */
 export async function getIntakeFunnel(
   repo: InquiryRepository,
   now: Date = REFERENCE_NOW,
 ): Promise<IntakeFunnel> {
-  const range: DateRange = { from: new Date(now.getTime() - PERIOD_DAYS * DAY_MS), to: now };
-  const agg = await repo.queryInquiries(range);
-  return buildFunnel(
-    FUNNEL_STAGES.map((s) => agg.byStage[s.stage]),
-    agg.total,
+  const agg = await repo.queryInquiries(lastPeriod(now));
+  const occupancy = FUNNEL_STAGES.map((s) => agg.byStage[s.stage]);
+  const counts = occupancy.map((_, k) =>
+    k === 0 ? agg.total : occupancy.slice(k).reduce((a, b) => a + b, 0),
   );
+  return buildFunnel(counts, agg.total);
 }

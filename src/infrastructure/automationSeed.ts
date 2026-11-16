@@ -1,4 +1,5 @@
 import { REFERENCE_NOW } from '../domain/referenceNow';
+import { DAY_MS, PERIOD_DAYS } from '../domain/period';
 import { WINDOW_DAYS, prng } from './seedGenerator';
 
 export const AUTOMATION_SEED = 20260202;
@@ -17,8 +18,6 @@ const MINUTES_SAVED: Readonly<Record<AutomationEventKind, number>> = {
   syncError: 0,
 };
 
-const DAY_MS = 86_400_000;
-
 /** Deterministic automation-event log over the WINDOW_DAYS ending at REFERENCE_NOW, using its own PRNG stream. */
 export function generateAutomationLog(seed: number): AutomationEvent[] {
   const rand = prng(seed);
@@ -35,8 +34,8 @@ export function generateAutomationLog(seed: number): AutomationEvent[] {
     for (let i = 0; i < reminders; i++) push('reminderSent', d);
     if (rand() < 0.06) push('syncError', d);
   }
-  // Guarantee a visible sync error in the last 30 days.
-  if (!events.some((e) => e.kind === 'syncError' && Date.parse(e.at) >= now - 30 * DAY_MS)) {
+  // Guarantee a visible sync error in the last PERIOD_DAYS days.
+  if (!events.some((e) => e.kind === 'syncError' && Date.parse(e.at) >= now - PERIOD_DAYS * DAY_MS)) {
     push('syncError', 5);
   }
   return events.sort((a, b) => a.at.localeCompare(b.at));

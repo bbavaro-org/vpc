@@ -6,9 +6,7 @@ import {
 } from '../domain/aggregates';
 import type { BookingRepository, InquiryRepository } from '../domain/repositories';
 import { REFERENCE_NOW } from '../domain/referenceNow';
-
-const DAY_MS = 86_400_000;
-export const PERIOD_DAYS = 30;
+import { DAY_MS, PERIOD_DAYS, lastPeriod } from '../domain/period';
 export const UTILIZATION_TARGET_BAND = { min: 80, max: 90 } as const;
 
 export type Direction = 'up' | 'down' | 'flat';
@@ -92,7 +90,7 @@ export async function getHeadlineMetrics(
   deps: HeadlineDeps,
   now: Date = REFERENCE_NOW,
 ): Promise<HeadlineMetrics> {
-  const currentRange = { from: new Date(now.getTime() - PERIOD_DAYS * DAY_MS), to: now };
+  const currentRange = lastPeriod(now);
   const priorRange = {
     from: new Date(currentRange.from.getTime() - PERIOD_DAYS * DAY_MS),
     to: currentRange.from,

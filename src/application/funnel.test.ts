@@ -3,7 +3,7 @@ import type { InquiryAggregate, InquiryRepository } from '../domain';
 import { MockJaneRepository } from '../infrastructure/mockJane';
 import { buildFunnel, getIntakeFunnel } from './funnel';
 
-function stub(counts: [number, number, number, number], total = counts[0]): InquiryRepository {
+function stub(counts: [number, number, number, number], total = 0, closed = 0): InquiryRepository {
   return {
     async queryInquiries(range) {
       const agg: InquiryAggregate = {
@@ -14,10 +14,10 @@ function stub(counts: [number, number, number, number], total = counts[0]): Inqu
           intakeCompleted: counts[1],
           matched: counts[2],
           booked: counts[3],
-          closed: 0,
+          closed,
         },
         newClientsBySource: {},
-        total,
+        total: total || counts.reduce((a, b) => a + b, 0) + closed,
         averageDaysToFirstSession: null,
       };
       return agg;
@@ -27,10 +27,12 @@ function stub(counts: [number, number, number, number], total = counts[0]): Inqu
 
 // AC-1 AC-2 AC-3 AC-4 (F004 core + edge)
 describe('intake funnel use case', () => {
-  it('reads four stage counts and marks the largest drop', async () => {
-    const f = await getIntakeFunnel(stub([100, 70, 55, 40]));
-    expect(f.stages.map((s) => s.count)).toEqual([100, 70, 55, 40]);
-    expect(f.gaps[0]).toEqual({ state: 'drop', dropOff: 30, dropOffPercent: 30, largest: true });
+  it('counts cumulative reached-stage and marks the largest drop', async () => {
+    // current-stage occupancy 30/15/15/40 plus 5 closed: 105 received.
+    const f = await getIntakeFunnel(stub([30, 15, 15, 40], 0, 5));
+    expect(f.total).toBe(105);
+    expect(f.stages.map((s) => s.count)).toEqual([105, 70, 55, 40]);
+    expect(f.gaps[0]).toMatchObject({ state: 'drop', dropOff: 35, largest: true });
     expect(f.gaps[1]).toMatchObject({ state: 'drop', dropOff: 15, largest: false });
     expect(f.gaps[2]).toMatchObject({ state: 'drop', dropOff: 15, largest: false });
   });
@@ -51,5 +53,11 @@ describe('intake funnel use case', () => {
   it('reads the seeded repository', async () => {
     const f = await getIntakeFunnel(new MockJaneRepository());
     expect(f.stages).toHaveLength(4);
+    expect(f.stages[0]?.count).toBe(f.total);
+    const counts = f.stages.map((s) => s.count);
+    counts.forEach((c, i) => {
+      if (i > 0) expect(c).toBeLessThanOrEqual(counts[i - 1] as number);
+    });
+    expect(f.gaps.some((g) => g.state === 'anomaly')).toBe(false);
   });
 });

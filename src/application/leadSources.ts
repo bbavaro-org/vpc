@@ -1,7 +1,5 @@
 import { LEAD_SOURCES, REFERENCE_NOW, type InquiryRepository, type LeadSource } from '../domain';
-import { PERIOD_DAYS } from './headline';
-
-const DAY_MS = 24 * 60 * 60 * 1000;
+import { lastPeriod } from '../domain/period';
 
 export interface LeadSourceShare {
   readonly source: LeadSource;
@@ -17,7 +15,7 @@ export async function getLeadSourceShares(
   repo: InquiryRepository,
   now: Date = REFERENCE_NOW,
 ): Promise<LeadSourceShares> {
-  const agg = await repo.queryInquiries({ from: new Date(now.getTime() - PERIOD_DAYS * DAY_MS), to: now });
+  const agg = await repo.queryInquiries(lastPeriod(now));
   const counts = LEAD_SOURCES.map((source) => agg.newClientsBySource[source] ?? 0);
   const total = counts.reduce((a, b) => a + b, 0);
   if (total <= 0) return { state: 'empty' };

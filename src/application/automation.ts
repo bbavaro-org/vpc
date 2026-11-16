@@ -1,8 +1,6 @@
 import type { AutomationRepository } from '../domain/automation';
 import { REFERENCE_NOW } from '../domain/referenceNow';
-
-const DAY_MS = 86_400_000;
-export const AUTOMATION_PERIOD_DAYS = 30;
+import { lastPeriod } from '../domain/period';
 
 export type SyncErrorStatus = 'needs-attention' | 'healthy';
 
@@ -18,7 +16,7 @@ export async function getAutomationImpact(
   repo: AutomationRepository,
   now: Date = REFERENCE_NOW,
 ): Promise<AutomationImpact> {
-  const range = { from: new Date(now.getTime() - AUTOMATION_PERIOD_DAYS * DAY_MS), to: now };
+  const range = lastPeriod(now);
   const a = await repo.queryAutomation(range);
   return {
     adminHoursSaved: a.adminHoursSaved,
