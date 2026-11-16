@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react';
+import { useCallback, useSyncExternalStore } from 'react';
 import { ROLE_LABELS } from '../../application/access';
 import { AUDIT_VIEW_ID, type AuditEntry, type AuditLog } from '../../domain';
 import { SLOT_TITLES } from '../shell/provider';
@@ -42,6 +42,8 @@ export function AuditView({ entries }: { readonly entries: readonly AuditEntry[]
 }
 
 export function AuditViewContainer({ log }: { readonly log: AuditLog }) {
-  const entries = useSyncExternalStore(log.subscribe, log.list);
+  const subscribe = useCallback((listener: () => void) => log.subscribe(listener), [log]);
+  const list = useCallback(() => log.list(), [log]);
+  const entries = useSyncExternalStore(subscribe, list, list);
   return <AuditView entries={entries} />;
 }

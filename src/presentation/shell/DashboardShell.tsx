@@ -5,7 +5,7 @@ import { PanelSlot } from "./PanelSlot";
 import { SLOT_TITLES, type DashboardProvider } from "./provider";
 import { useState } from "react";
 import { canView, permittedPanels } from "../../application/access";
-import { recordView } from "../../application/audit";
+import { closeAuditView, openAuditView } from "./auditNav";
 import { AUDIT_VIEW_ID, type AuditLog, type Role } from "../../domain";
 import { AuditViewContainer } from "../audit/AuditView";
 import { RoleSwitcher } from "../access/RoleSwitcher";
@@ -15,6 +15,7 @@ export interface DashboardShellProps {
   readonly role: Role;
   readonly onRoleChange?: (role: Role) => void;
   readonly auditLog?: AuditLog;
+  readonly initialAuditOpen?: boolean;
 }
 
 export function DashboardShell({
@@ -22,9 +23,12 @@ export function DashboardShell({
   role,
   onRoleChange,
   auditLog,
+  initialAuditOpen = false,
 }: DashboardShellProps) {
-  const [auditOpen, setAuditOpen] = useState(false);
+  const [auditOpen, setAuditOpen] = useState(initialAuditOpen);
   const showAudit = canView(role, AUDIT_VIEW_ID);
+  const openLog = showAudit && auditOpen ? auditLog : undefined;
+  const auditVisible = openLog !== undefined;
   const panels = permittedPanels(role);
   return (
     <div
@@ -81,30 +85,59 @@ export function DashboardShell({
             type="button"
             className="vpc-btn vpc-btn-ghost vpc-btn-small"
             onClick={() => {
-              if (!auditOpen) recordView(auditLog, role, AUDIT_VIEW_ID);
-              setAuditOpen(true);
+              setAuditOpen(openAuditView(auditLog, role, auditVisible));
             }}
           >
             View audit log
           </button>
         )}
-        <RoleSwitcher role={role} onRoleChange={onRoleChange} />
+        <RoleSwitcher
+          role={role}
+          onRoleChange={(next) => {
+            setAuditOpen(closeAuditView());
+            onRoleChange?.(next);
+          }}
+        />
       </header>
-      <main
-        style={{
-          maxWidth: "var(--max-width)",
-          margin: "0 auto",
-          padding: "var(--space-8) clamp(20px, 4vw, 48px)",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "var(--space-6)",
-        }}
-      >
-        {panels.map((id) => (
-          <PanelSlot key={id} slot={id} provider={provider} />
-        ))}
-        {showAudit && auditOpen && auditLog && <AuditViewContainer log={auditLog} />}
-      </main>
+      {openLog ? (
+        <main
+          style={{
+            maxWidth: "var(--max-width)",
+            margin: "0 auto",
+            padding: "var(--space-8) clamp(20px, 4vw, 48px)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: "var(--space-6)",
+          }}
+        >
+          <button
+            type="button"
+            className="vpc-btn vpc-btn-ghost vpc-btn-small"
+            onClick={() => setAuditOpen(closeAuditView())}
+          >
+            Back to dashboard
+          </button>
+          <div style={{ width: "100%" }}>
+            <AuditViewContainer log={openLog} />
+          </div>
+        </main>
+      ) : (
+        <main
+          style={{
+            maxWidth: "var(--max-width)",
+            margin: "0 auto",
+            padding: "var(--space-8) clamp(20px, 4vw, 48px)",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "var(--space-6)",
+          }}
+        >
+          {panels.map((id) => (
+            <PanelSlot key={id} slot={id} provider={provider} />
+          ))}
+        </main>
+      )}
     </div>
   );
 }
