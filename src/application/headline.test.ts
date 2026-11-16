@@ -10,7 +10,8 @@ const range = { from: new Date('2026-10-01T00:00:00Z'), to: new Date('2026-10-31
 const inquiryAgg = (averageDaysToFirstSession: number | null): InquiryAggregate => ({
   range,
   bySource: {},
-  byStage: { new: 0, contacted: 0, assessment: 0, booked: 0, closed: 0 },
+  byStage: { inquiry: 0, intakeCompleted: 0, matched: 0, booked: 0, closed: 0 },
+  newClientsBySource: {},
   total: 10,
   averageDaysToFirstSession,
 });

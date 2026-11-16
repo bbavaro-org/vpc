@@ -1,7 +1,15 @@
 export const SPECIALTIES = ['Child/Youth', 'Adult Anxiety', 'Couples', 'Assessments'] as const;
 export type Specialty = (typeof SPECIALTIES)[number];
 export type AppointmentStatus = 'scheduled' | 'completed' | 'cancelled' | 'noShow';
-export type IntakeStage = 'new' | 'contacted' | 'assessment' | 'booked' | 'closed';
+export type IntakeStage = 'inquiry' | 'intakeCompleted' | 'matched' | 'booked' | 'closed';
+export const LEAD_SOURCES = [
+  'Google search',
+  'Physician referral',
+  'Insurance / EAP',
+  'Social media',
+  'Word of mouth',
+] as const;
+export type LeadSource = (typeof LEAD_SOURCES)[number];
 
 export interface Appointment {
   readonly id: string;
@@ -14,7 +22,7 @@ export interface Appointment {
 
 export interface Inquiry {
   readonly id: string;
-  readonly source: string;
+  readonly source: LeadSource;
   readonly receivedAt: Date;
   readonly intakeStage: IntakeStage;
   /** Date of the client's first session; null until the inquiry converts to a booking. */

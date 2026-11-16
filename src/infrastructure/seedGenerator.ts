@@ -1,4 +1,4 @@
-import { SPECIALTIES, type Specialty, type Appointment, type AppointmentStatus, type Clinician, type IntakeStage, type Inquiry, type WaitlistEntry } from '../domain/entities';
+import { SPECIALTIES, type Specialty, type Appointment, type AppointmentStatus, type Clinician, type IntakeStage, type Inquiry, LEAD_SOURCES, type LeadSource, type WaitlistEntry } from '../domain/entities';
 import { REFERENCE_NOW } from '../domain/referenceNow';
 
 export { REFERENCE_NOW, SPECIALTIES };
@@ -10,11 +10,17 @@ export const FORWARD_DAYS = 14;
 
 const DAY = 86_400_000;
 const HOUR = 3_600_000;
-const SOURCES = ['website', 'referral', 'phone', 'insurance', 'walk-in'];
+const SOURCE_WEIGHTS: readonly (readonly [LeadSource, number])[] = [
+  [LEAD_SOURCES[0], 38],
+  [LEAD_SOURCES[1], 25],
+  [LEAD_SOURCES[2], 18],
+  [LEAD_SOURCES[3], 12],
+  [LEAD_SOURCES[4], 7],
+];
 const STAGE_WEIGHTS: readonly (readonly [IntakeStage, number])[] = [
-  ['new', 15],
-  ['contacted', 15],
-  ['assessment', 15],
+  ['inquiry', 15],
+  ['intakeCompleted', 15],
+  ['matched', 15],
   ['booked', 40],
   ['closed', 15],
 ];
@@ -114,7 +120,7 @@ export function generateStore(seed: number): Store {
       const intakeStage = pickWeighted(STAGE_WEIGHTS);
       inquiries.push({
         id: `iq-${String(inquiries.length + 1).padStart(5, '0')}`,
-        source: pick(SOURCES),
+        source: pickWeighted(SOURCE_WEIGHTS),
         receivedAt: iso(receivedMs),
         intakeStage,
         firstSessionAt: intakeStage === 'booked' ? iso(receivedMs + int(2, 14) * DAY) : null,

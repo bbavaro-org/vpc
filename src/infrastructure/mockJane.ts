@@ -30,7 +30,7 @@ export type MockInquiryAggregate = InquiryAggregate & ClampInfo;
 
 const DAY_MS = 86_400_000;
 const STATUSES: readonly AppointmentStatus[] = ['scheduled', 'completed', 'cancelled', 'noShow'];
-const STAGES: readonly IntakeStage[] = ['new', 'contacted', 'assessment', 'booked', 'closed'];
+const STAGES: readonly IntakeStage[] = ['inquiry', 'intakeCompleted', 'matched', 'booked', 'closed'];
 
 function earliest(times: readonly string[]): number {
   return times.length === 0 ? Number.NEGATIVE_INFINITY : Math.min(...times.map(Date.parse));
@@ -130,6 +130,9 @@ export class MockJaneRepository implements BookingRepository, InquiryRepository 
       range,
       bySource: Object.fromEntries(tally(rows.map((i) => i.source))),
       byStage,
+      newClientsBySource: Object.fromEntries(
+        tally(rows.filter((i) => i.intakeStage === 'booked').map((i) => i.source)),
+      ),
       total: rows.length,
       averageDaysToFirstSession: averageDaysToFirstSession(rows),
       ...(clampedStart ? { clampedStart } : {}),

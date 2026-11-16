@@ -30,6 +30,8 @@ export interface InquiryAggregate {
   readonly range: DateRange;
   readonly bySource: Readonly<Record<string, number>>;
   readonly byStage: Readonly<Record<IntakeStage, number>>;
+  /** Inquiries that reached 'booked' per lead source. */
+  readonly newClientsBySource: Readonly<Record<string, number>>;
   readonly total: number;
   /** Mean days from inquiry to first session over converted inquiries; null when none converted. */
   readonly averageDaysToFirstSession: number | null;

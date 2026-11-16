@@ -7004,2487 +7004,2487 @@
   "inquiries": [
     {
       "id": "iq-00001",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-03T08:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00002",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-03T03:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-11T03:00:00.000Z"
     },
     {
       "id": "iq-00003",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-03T22:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00004",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-03T04:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00005",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-04T10:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-09T10:00:00.000Z"
     },
     {
       "id": "iq-00006",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-04T13:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00007",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-04T00:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-15T00:00:00.000Z"
     },
     {
       "id": "iq-00008",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-08-04T04:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00009",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-08-05T01:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00010",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-05T04:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-18T04:00:00.000Z"
     },
     {
       "id": "iq-00011",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-08-06T07:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00012",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-06T11:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00013",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-06T14:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-18T14:00:00.000Z"
     },
     {
       "id": "iq-00014",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-07T07:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00015",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-08-07T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-18T23:00:00.000Z"
     },
     {
       "id": "iq-00016",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-08T10:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-18T10:00:00.000Z"
     },
     {
       "id": "iq-00017",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-08T00:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00018",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-08T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-22T23:00:00.000Z"
     },
     {
       "id": "iq-00019",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-08T07:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-11T07:00:00.000Z"
     },
     {
       "id": "iq-00020",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-09T06:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00021",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-09T04:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-17T04:00:00.000Z"
     },
     {
       "id": "iq-00022",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-09T05:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00023",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-09T08:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-13T08:00:00.000Z"
     },
     {
       "id": "iq-00024",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-10T02:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00025",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-10T15:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-21T15:00:00.000Z"
     },
     {
       "id": "iq-00026",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-10T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-24T06:00:00.000Z"
     },
     {
       "id": "iq-00027",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-10T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-20T17:00:00.000Z"
     },
     {
       "id": "iq-00028",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-11T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-22T06:00:00.000Z"
     },
     {
       "id": "iq-00029",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-12T19:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00030",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-13T10:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-15T10:00:00.000Z"
     },
     {
       "id": "iq-00031",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-13T06:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00032",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-13T15:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00033",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-13T20:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-23T20:00:00.000Z"
     },
     {
       "id": "iq-00034",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-14T00:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-17T00:00:00.000Z"
     },
     {
       "id": "iq-00035",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-14T19:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00036",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-14T11:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-19T11:00:00.000Z"
     },
     {
       "id": "iq-00037",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-14T15:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00038",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-15T23:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00039",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-08-16T23:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00040",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-16T08:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-27T08:00:00.000Z"
     },
     {
       "id": "iq-00041",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-16T00:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00042",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-17T20:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-20T20:00:00.000Z"
     },
     {
       "id": "iq-00043",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-18T15:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-31T15:00:00.000Z"
     },
     {
       "id": "iq-00044",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-18T18:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00045",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-08-18T21:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00046",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-18T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-26T17:00:00.000Z"
     },
     {
       "id": "iq-00047",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-19T13:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00048",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-19T14:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-24T14:00:00.000Z"
     },
     {
       "id": "iq-00049",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-19T07:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-29T07:00:00.000Z"
     },
     {
       "id": "iq-00050",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-19T14:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-23T14:00:00.000Z"
     },
     {
       "id": "iq-00051",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-19T15:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00052",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-20T04:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-25T04:00:00.000Z"
     },
     {
       "id": "iq-00053",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-20T05:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00054",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-20T12:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-01T12:00:00.000Z"
     },
     {
       "id": "iq-00055",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-20T13:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-25T13:00:00.000Z"
     },
     {
       "id": "iq-00056",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-20T02:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-26T02:00:00.000Z"
     },
     {
       "id": "iq-00057",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-21T15:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00058",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-21T05:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00059",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-22T01:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00060",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-22T03:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-03T03:00:00.000Z"
     },
     {
       "id": "iq-00061",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-23T02:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-05T02:00:00.000Z"
     },
     {
       "id": "iq-00062",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-23T14:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00063",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-23T11:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-31T11:00:00.000Z"
     },
     {
       "id": "iq-00064",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-23T09:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00065",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-08-24T08:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-07T08:00:00.000Z"
     },
     {
       "id": "iq-00066",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-24T08:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00067",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-24T01:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00068",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-24T18:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00069",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-25T02:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00070",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-25T22:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00071",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-25T02:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00072",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-25T19:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-28T19:00:00.000Z"
     },
     {
       "id": "iq-00073",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-25T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-31T06:00:00.000Z"
     },
     {
       "id": "iq-00074",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-26T18:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-08-29T18:00:00.000Z"
     },
     {
       "id": "iq-00075",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-27T15:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00076",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-27T07:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00077",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-27T10:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00078",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-27T12:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00079",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-27T01:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00080",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-28T13:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-08T13:00:00.000Z"
     },
     {
       "id": "iq-00081",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-29T21:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-12T21:00:00.000Z"
     },
     {
       "id": "iq-00082",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-08-29T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-06T06:00:00.000Z"
     },
     {
       "id": "iq-00083",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-29T23:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00084",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-29T12:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-03T12:00:00.000Z"
     },
     {
       "id": "iq-00085",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-30T17:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00086",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-08-30T13:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00087",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-30T05:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00088",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-08-30T16:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00089",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-30T05:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00090",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-31T22:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00091",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-08-31T21:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-06T21:00:00.000Z"
     },
     {
       "id": "iq-00092",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-08-31T12:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-06T12:00:00.000Z"
     },
     {
       "id": "iq-00093",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-01T22:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00094",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-01T16:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-13T16:00:00.000Z"
     },
     {
       "id": "iq-00095",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-01T18:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00096",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-01T14:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-11T14:00:00.000Z"
     },
     {
       "id": "iq-00097",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-09-01T03:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00098",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-02T03:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-06T03:00:00.000Z"
     },
     {
       "id": "iq-00099",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-02T08:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00100",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-02T06:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00101",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-02T13:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-16T13:00:00.000Z"
     },
     {
       "id": "iq-00102",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-02T08:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-14T08:00:00.000Z"
     },
     {
       "id": "iq-00103",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-03T10:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-05T10:00:00.000Z"
     },
     {
       "id": "iq-00104",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-03T17:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00105",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-03T10:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00106",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-03T14:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00107",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-04T02:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00108",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-04T02:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-13T02:00:00.000Z"
     },
     {
       "id": "iq-00109",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-04T05:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00110",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-04T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-10T23:00:00.000Z"
     },
     {
       "id": "iq-00111",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-04T21:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00112",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-05T02:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-11T02:00:00.000Z"
     },
     {
       "id": "iq-00113",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-05T03:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00114",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-05T03:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00115",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-05T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-07T17:00:00.000Z"
     },
     {
       "id": "iq-00116",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-05T21:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00117",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-06T14:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00118",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-06T18:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00119",
-      "source": "referral",
+      "source": "Physician referral",
       "receivedAt": "2026-09-06T14:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00120",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-07T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-11T17:00:00.000Z"
     },
     {
       "id": "iq-00121",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-07T05:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-11T05:00:00.000Z"
     },
     {
       "id": "iq-00122",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-07T12:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-11T12:00:00.000Z"
     },
     {
       "id": "iq-00123",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-07T06:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00124",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-07T01:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00125",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-07T08:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00126",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-08T15:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00127",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-08T06:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00128",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-08T06:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00129",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-08T11:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00130",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-08T22:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00131",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-09-08T08:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00132",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-09T10:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00133",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-09-09T11:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-22T11:00:00.000Z"
     },
     {
       "id": "iq-00134",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-09T18:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00135",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-10T01:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00136",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-10T20:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00137",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-10T21:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00138",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-10T21:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00139",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-11T23:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00140",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-11T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-18T17:00:00.000Z"
     },
     {
       "id": "iq-00141",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-11T22:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-18T22:00:00.000Z"
     },
     {
       "id": "iq-00142",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-09-12T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-19T23:00:00.000Z"
     },
     {
       "id": "iq-00143",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-12T05:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00144",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-12T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-14T06:00:00.000Z"
     },
     {
       "id": "iq-00145",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-12T05:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-24T05:00:00.000Z"
     },
     {
       "id": "iq-00146",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-12T14:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-18T14:00:00.000Z"
     },
     {
       "id": "iq-00147",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-09-12T05:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00148",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-13T01:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00149",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-13T22:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-23T22:00:00.000Z"
     },
     {
       "id": "iq-00150",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-09-13T13:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-16T13:00:00.000Z"
     },
     {
       "id": "iq-00151",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-14T19:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-24T19:00:00.000Z"
     },
     {
       "id": "iq-00152",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-15T04:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00153",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-15T18:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-24T18:00:00.000Z"
     },
     {
       "id": "iq-00154",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-15T22:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00155",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-15T19:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00156",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-16T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-22T23:00:00.000Z"
     },
     {
       "id": "iq-00157",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-09-16T12:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00158",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-16T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-18T06:00:00.000Z"
     },
     {
       "id": "iq-00159",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-17T23:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00160",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-17T01:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00161",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-17T15:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00162",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-18T01:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00163",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-18T21:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00164",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-19T13:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00165",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-19T12:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00166",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-19T07:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00167",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-19T04:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-29T04:00:00.000Z"
     },
     {
       "id": "iq-00168",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-19T11:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00169",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-20T10:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-30T10:00:00.000Z"
     },
     {
       "id": "iq-00170",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-09-20T11:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00171",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-20T19:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-25T19:00:00.000Z"
     },
     {
       "id": "iq-00172",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-21T20:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00173",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-21T07:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-29T07:00:00.000Z"
     },
     {
       "id": "iq-00174",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-21T14:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00175",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-22T16:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00176",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-22T05:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-30T05:00:00.000Z"
     },
     {
       "id": "iq-00177",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-23T05:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00178",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-23T16:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00179",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-23T18:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00180",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-24T21:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-06T21:00:00.000Z"
     },
     {
       "id": "iq-00181",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-24T18:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-29T18:00:00.000Z"
     },
     {
       "id": "iq-00182",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-24T23:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00183",
-      "source": "referral",
+      "source": "Physician referral",
       "receivedAt": "2026-09-24T02:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00184",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-24T09:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00185",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-25T02:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00186",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-25T17:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00187",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-25T05:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-04T05:00:00.000Z"
     },
     {
       "id": "iq-00188",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-26T23:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00189",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-26T21:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00190",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-26T20:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00191",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-27T19:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-04T19:00:00.000Z"
     },
     {
       "id": "iq-00192",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-27T00:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-02T00:00:00.000Z"
     },
     {
       "id": "iq-00193",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-27T18:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-29T18:00:00.000Z"
     },
     {
       "id": "iq-00194",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-27T00:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00195",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-27T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-10T06:00:00.000Z"
     },
     {
       "id": "iq-00196",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-27T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-09T17:00:00.000Z"
     },
     {
       "id": "iq-00197",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-28T20:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-10T20:00:00.000Z"
     },
     {
       "id": "iq-00198",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-28T00:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-05T00:00:00.000Z"
     },
     {
       "id": "iq-00199",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-28T08:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-09-30T08:00:00.000Z"
     },
     {
       "id": "iq-00200",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-28T13:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-12T13:00:00.000Z"
     },
     {
       "id": "iq-00201",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-09-28T04:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00202",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-29T02:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00203",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-29T11:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-13T11:00:00.000Z"
     },
     {
       "id": "iq-00204",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-29T08:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00205",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-30T18:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00206",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-09-30T18:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00207",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-09-30T04:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-04T04:00:00.000Z"
     },
     {
       "id": "iq-00208",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-09-30T02:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-10T02:00:00.000Z"
     },
     {
       "id": "iq-00209",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-09-30T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-09T17:00:00.000Z"
     },
     {
       "id": "iq-00210",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-01T03:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-06T03:00:00.000Z"
     },
     {
       "id": "iq-00211",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-01T12:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00212",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-10-01T11:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-06T11:00:00.000Z"
     },
     {
       "id": "iq-00213",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-01T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-11T23:00:00.000Z"
     },
     {
       "id": "iq-00214",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-01T23:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00215",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-02T02:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-13T02:00:00.000Z"
     },
     {
       "id": "iq-00216",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-02T04:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00217",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-02T21:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-11T21:00:00.000Z"
     },
     {
       "id": "iq-00218",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-10-02T10:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00219",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-02T20:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00220",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-03T11:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-09T11:00:00.000Z"
     },
     {
       "id": "iq-00221",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-03T20:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00222",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-03T02:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00223",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-03T06:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00224",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-03T19:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00225",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-04T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-10T06:00:00.000Z"
     },
     {
       "id": "iq-00226",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-04T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-12T17:00:00.000Z"
     },
     {
       "id": "iq-00227",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-04T00:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00228",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-05T19:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00229",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-10-05T02:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00230",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-05T12:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00231",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-05T20:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-08T20:00:00.000Z"
     },
     {
       "id": "iq-00232",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-10-05T15:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-13T15:00:00.000Z"
     },
     {
       "id": "iq-00233",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-10-05T08:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00234",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-05T01:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00235",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-06T02:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-20T02:00:00.000Z"
     },
     {
       "id": "iq-00236",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-06T11:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00237",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-06T16:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00238",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-06T05:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-08T05:00:00.000Z"
     },
     {
       "id": "iq-00239",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-06T21:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-11T21:00:00.000Z"
     },
     {
       "id": "iq-00240",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-07T17:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00241",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-10-07T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-13T23:00:00.000Z"
     },
     {
       "id": "iq-00242",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-07T00:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-14T00:00:00.000Z"
     },
     {
       "id": "iq-00243",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-08T11:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00244",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-08T16:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00245",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-08T20:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00246",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-09T11:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00247",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-09T12:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00248",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-09T18:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00249",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-10T23:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00250",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-10T18:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-12T18:00:00.000Z"
     },
     {
       "id": "iq-00251",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-10T02:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00252",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-10T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-19T23:00:00.000Z"
     },
     {
       "id": "iq-00253",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-10T12:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-21T12:00:00.000Z"
     },
     {
       "id": "iq-00254",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-11T03:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-24T03:00:00.000Z"
     },
     {
       "id": "iq-00255",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-11T03:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00256",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-11T17:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00257",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-11T11:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-14T11:00:00.000Z"
     },
     {
       "id": "iq-00258",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-11T13:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-22T13:00:00.000Z"
     },
     {
       "id": "iq-00259",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-11T08:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-19T08:00:00.000Z"
     },
     {
       "id": "iq-00260",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-11T07:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-17T07:00:00.000Z"
     },
     {
       "id": "iq-00261",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-10-12T02:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-22T02:00:00.000Z"
     },
     {
       "id": "iq-00262",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-12T22:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-25T22:00:00.000Z"
     },
     {
       "id": "iq-00263",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-13T02:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00264",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-13T10:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-17T10:00:00.000Z"
     },
     {
       "id": "iq-00265",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-14T00:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00266",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-14T00:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00267",
-      "source": "referral",
+      "source": "Physician referral",
       "receivedAt": "2026-10-14T03:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-26T03:00:00.000Z"
     },
     {
       "id": "iq-00268",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-14T05:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00269",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-14T23:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00270",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-14T03:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-18T03:00:00.000Z"
     },
     {
       "id": "iq-00271",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-14T07:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00272",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-15T14:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-22T14:00:00.000Z"
     },
     {
       "id": "iq-00273",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-15T19:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-17T19:00:00.000Z"
     },
     {
       "id": "iq-00274",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-15T11:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00275",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-15T04:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-28T04:00:00.000Z"
     },
     {
       "id": "iq-00276",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-10-15T13:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00277",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-15T02:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00278",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-15T17:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00279",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-16T02:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00280",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-16T17:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-26T17:00:00.000Z"
     },
     {
       "id": "iq-00281",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-16T16:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00282",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-16T22:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-30T22:00:00.000Z"
     },
     {
       "id": "iq-00283",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-17T22:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-24T22:00:00.000Z"
     },
     {
       "id": "iq-00284",
-      "source": "walk-in",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-17T14:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00285",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-10-18T19:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00286",
-      "source": "referral",
+      "source": "Physician referral",
       "receivedAt": "2026-10-18T12:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00287",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-18T07:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-26T07:00:00.000Z"
     },
     {
       "id": "iq-00288",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-18T23:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00289",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-19T12:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00290",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-19T05:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-23T05:00:00.000Z"
     },
     {
       "id": "iq-00291",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-19T02:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00292",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-19T02:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00293",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-20T19:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-23T19:00:00.000Z"
     },
     {
       "id": "iq-00294",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-20T04:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00295",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-20T15:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-01T15:00:00.000Z"
     },
     {
       "id": "iq-00296",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-20T18:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00297",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-20T10:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-26T10:00:00.000Z"
     },
     {
       "id": "iq-00298",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-20T15:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00299",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-20T00:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00300",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-21T05:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00301",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-21T12:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00302",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-22T13:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00303",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-22T15:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-31T15:00:00.000Z"
     },
     {
       "id": "iq-00304",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-23T19:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-06T19:00:00.000Z"
     },
     {
       "id": "iq-00305",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-23T11:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-29T11:00:00.000Z"
     },
     {
       "id": "iq-00306",
-      "source": "referral",
+      "source": "Physician referral",
       "receivedAt": "2026-10-23T23:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00307",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-10-23T06:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-25T06:00:00.000Z"
     },
     {
       "id": "iq-00308",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-23T09:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00309",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-23T21:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00310",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-23T16:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-30T16:00:00.000Z"
     },
     {
       "id": "iq-00311",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-23T11:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00312",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-24T00:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-28T00:00:00.000Z"
     },
     {
       "id": "iq-00313",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-24T23:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-05T23:00:00.000Z"
     },
     {
       "id": "iq-00314",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-24T21:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00315",
-      "source": "referral",
+      "source": "Physician referral",
       "receivedAt": "2026-10-24T01:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00316",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-25T20:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-10-31T20:00:00.000Z"
     },
     {
       "id": "iq-00317",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-25T05:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00318",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-26T06:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00319",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-26T10:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-01T10:00:00.000Z"
     },
     {
       "id": "iq-00320",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-27T00:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-04T00:00:00.000Z"
     },
     {
       "id": "iq-00321",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-27T10:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00322",
-      "source": "walk-in",
+      "source": "Social media",
       "receivedAt": "2026-10-27T01:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00323",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-27T07:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00324",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-27T16:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00325",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-27T11:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00326",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-27T08:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00327",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-27T15:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00328",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-28T15:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-03T15:00:00.000Z"
     },
     {
       "id": "iq-00329",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-28T19:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00330",
-      "source": "walk-in",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-28T13:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-07T13:00:00.000Z"
     },
     {
       "id": "iq-00331",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-28T00:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-02T00:00:00.000Z"
     },
     {
       "id": "iq-00332",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-28T05:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-03T05:00:00.000Z"
     },
     {
       "id": "iq-00333",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-28T07:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00334",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-28T08:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00335",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-28T21:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00336",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-29T16:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00337",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-29T05:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-10T05:00:00.000Z"
     },
     {
       "id": "iq-00338",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-29T09:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00339",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-29T18:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-03T18:00:00.000Z"
     },
     {
       "id": "iq-00340",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-29T11:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00341",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-29T21:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00342",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-30T12:00:00.000Z",
       "intakeStage": "closed",
       "firstSessionAt": null
     },
     {
       "id": "iq-00343",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-10-30T13:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00344",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-30T21:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-02T21:00:00.000Z"
     },
     {
       "id": "iq-00345",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-30T15:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00346",
-      "source": "website",
+      "source": "Google search",
       "receivedAt": "2026-10-30T14:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00347",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-30T20:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00348",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-30T09:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00349",
-      "source": "insurance",
+      "source": "Insurance / EAP",
       "receivedAt": "2026-10-30T13:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00350",
-      "source": "insurance",
+      "source": "Physician referral",
       "receivedAt": "2026-10-31T12:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     },
     {
       "id": "iq-00351",
-      "source": "walk-in",
+      "source": "Word of mouth",
       "receivedAt": "2026-10-31T11:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00352",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-31T21:00:00.000Z",
       "intakeStage": "booked",
       "firstSessionAt": "2026-11-14T21:00:00.000Z"
     },
     {
       "id": "iq-00353",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-31T18:00:00.000Z",
-      "intakeStage": "new",
+      "intakeStage": "inquiry",
       "firstSessionAt": null
     },
     {
       "id": "iq-00354",
-      "source": "referral",
+      "source": "Google search",
       "receivedAt": "2026-10-31T02:00:00.000Z",
-      "intakeStage": "contacted",
+      "intakeStage": "intakeCompleted",
       "firstSessionAt": null
     },
     {
       "id": "iq-00355",
-      "source": "phone",
+      "source": "Physician referral",
       "receivedAt": "2026-10-31T11:00:00.000Z",
-      "intakeStage": "assessment",
+      "intakeStage": "matched",
       "firstSessionAt": null
     }
   ],

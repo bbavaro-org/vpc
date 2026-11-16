@@ -44,7 +44,7 @@ describe('mock Jane repository', () => {
     const store = {
       appointments: [{ specialty: 'Couples', status: 'scheduled' as const, scheduledAt: boundary.toISOString() }],
       inquiries: [
-        { source: 'website', receivedAt: boundary.toISOString(), intakeStage: 'new' as const, firstSessionAt: null },
+        { source: 'Google search' as const, receivedAt: boundary.toISOString(), intakeStage: 'inquiry' as const, firstSessionAt: null },
       ],
       clinicians: [],
       waitlist: [],
