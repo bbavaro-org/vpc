@@ -9,11 +9,11 @@ const ok = async () => ({ items: [{ label: "Leads", value: "42" }] });
 describe("dashboard shell", () => {
   it("renders header, navigation, role and five named slots in loading state", () => {
     const html = renderToString(
-      <DashboardShell provider={{}} role="Practice Owner" />,
+      <DashboardShell provider={{}} role="management" />,
     );
     expect(html).toContain("<header");
     expect(html).toContain("<nav");
-    expect(html).toContain("Practice Owner");
+    expect(html).toContain("Management");
     for (const id of SLOT_IDS) expect(html).toContain(`data-slot="${id}"`);
     expect(html.match(/data-state="loading"/g)).toHaveLength(5);
     expect(html).toContain("Loading");

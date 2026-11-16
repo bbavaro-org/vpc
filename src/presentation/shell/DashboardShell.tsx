@@ -2,17 +2,23 @@ import "./shell.css";
 // Served from public/ so dev and production resolve the same URL.
 const logoUrl = "/vpc-logo.png";
 import { PanelSlot } from "./PanelSlot";
-import { SLOT_IDS, SLOT_TITLES, type DashboardProvider } from "./provider";
+import { SLOT_TITLES, type DashboardProvider } from "./provider";
+import { permittedPanels } from "../../application/access";
+import type { Role } from "../../domain";
+import { RoleSwitcher } from "../access/RoleSwitcher";
 
 export interface DashboardShellProps {
   readonly provider: DashboardProvider;
-  readonly role?: string;
+  readonly role: Role;
+  readonly onRoleChange?: (role: Role) => void;
 }
 
 export function DashboardShell({
   provider,
-  role = "Practice Owner",
+  role,
+  onRoleChange,
 }: DashboardShellProps) {
+  const panels = permittedPanels(role);
   return (
     <div
       style={{
@@ -51,7 +57,7 @@ export function DashboardShell({
               padding: 0,
             }}
           >
-            {SLOT_IDS.map((id) => (
+            {panels.map((id) => (
               <li key={id}>
                 <a
                   className="dashboard-nav-link"
@@ -63,10 +69,7 @@ export function DashboardShell({
             ))}
           </ul>
         </nav>
-        <div data-testid="active-role">
-          <span className="vpc-eyebrow">Role</span>{" "}
-          <span className="vpc-tag">{role}</span>
-        </div>
+        <RoleSwitcher role={role} onRoleChange={onRoleChange} />
       </header>
       <main
         style={{
@@ -78,7 +81,7 @@ export function DashboardShell({
           gap: "var(--space-6)",
         }}
       >
-        {SLOT_IDS.map((id) => (
+        {panels.map((id) => (
           <PanelSlot key={id} slot={id} provider={provider} />
         ))}
       </main>
