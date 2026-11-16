@@ -222,3 +222,8 @@ __marimo__/
 # Project (dashboard)
 .DS_Store
 .shipyard
+node_modules
+dist
+test-results
+playwright-report
+*.tsbuildinfo
