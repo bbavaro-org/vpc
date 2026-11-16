@@ -38,5 +38,19 @@ describe('capacity panel', () => {
   it('loader yields a render function', async () => {
     const vm = await capacityLoader(new MockJaneRepository())();
     expect(vm.render).toBeTypeOf('function');
+    expect(vm.items.length).toBeGreaterThan(0);
+    for (const item of vm.items) {
+      expect(item.label).toBeTruthy();
+      expect(item.value).toMatch(/^(No capacity|\d+% booked)$/);
+    }
+  });
+  it('loader view model and rendered body distinguish no-capacity from percent booked', async () => {
+    const vm = await capacityLoader(new MockJaneRepository())();
+    const body = renderToString(vm.render?.() as never);
+    const noCap = vm.items.filter((i) => i.value === 'No capacity');
+    const booked = vm.items.filter((i) => i.value.endsWith('% booked'));
+    expect(noCap.length + booked.length).toBe(vm.items.length);
+    expect(body.includes('No capacity')).toBe(noCap.length > 0);
+    for (const i of booked) expect(body).toContain(i.value);
   });
 });

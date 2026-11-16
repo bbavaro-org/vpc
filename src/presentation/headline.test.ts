@@ -34,6 +34,17 @@ describe('headline cards', () => {
     expect(html).not.toContain('NaN');
   });
 
+  it('renders the flat delta and the null-prior comparison text', () => {
+    const edge: HeadlineMetrics = {
+      ...metrics,
+      newInquiries: { current: 10, prior: 10, change: 0, direction: 'flat' },
+      inquiryToFirstSessionDays: { current: 7, prior: null, change: null, direction: null },
+    };
+    const html = renderToString(createElement(HeadlineCards, { metrics: edge }));
+    expect(html).toContain('Unchanged from 10');
+    expect(html).toContain('No prior-period comparison');
+  });
+
   it('live panel reads real view models through the provider seam', async () => {
     const jane = new MockJaneRepository();
     const provider = { 'headline-metrics': headlineLoader({ bookings: jane, inquiries: jane }) };
