@@ -10,7 +10,7 @@ Captured from the live CSS of vancouverpsychologycentre.com on November 16, 2026
 | --- | --- | --- |
 | `tokens.json` | Every token with its value and a usage note | Source of truth. Read the `usage` field before choosing a token. |
 | `tokens.css` | The same tokens as CSS custom properties, plus `.text-*` classes for each text style | Import once at the app root: `@import "./design-system/tokens.css";` |
-| `components.css` | Styles for the components below (classes prefixed `vpc-`) | Import after `tokens.css`. Loads the Google Fonts. |
+| `components.css` | Styles for the components below (classes prefixed `vpc-`) | Import after `tokens.css`. Fonts are self-hosted by the app. |
 | `vpc-logo.png` | The logo (350 × 84px; display at 175 × 42px) | Place on `white` or `lime-soft` only. Do not redraw or recolor it. |
 | `DESIGN.md` | This guide | |
 
@@ -56,7 +56,7 @@ Rules:
 
 ## Typography
 
-Two Google-hosted families (loaded by `components.css`):
+Two self-hosted families (served by the app's `@font-face` declarations):
 - **Source Serif 4**, weight 400 only, tracking −0.02em: all headings. The hero's key word may be italic.
 - **Inter**: everything else.
 
