@@ -6,7 +6,7 @@ import { getAutomationImpact } from '../application/automation';
 import { getIntakeFunnel } from '../application/funnel';
 import { getHeadlineMetrics } from '../application/headline';
 import { getLeadSourceShares } from '../application/leadSources';
-import { PANEL_IDS, type PanelId } from '../domain';
+import { PANEL_IDS, type AutomationRepository, type BookingRepository, type InquiryRepository, type PanelId } from '../domain';
 import { REFERENCE_NOW } from '../domain/referenceNow';
 import { MockAutomationRepository } from '../infrastructure/mockAutomation';
 import { MockJaneRepository } from '../infrastructure/mockJane';
@@ -17,7 +17,7 @@ interface PanelItem {
 }
 
 /** Aggregate-only panel payload: summary items plus the use case's aggregate view model. */
-interface PanelPayload {
+export interface PanelPayload {
   readonly items: readonly PanelItem[];
   readonly data: unknown;
 }
@@ -34,9 +34,16 @@ const MIME: Readonly<Record<string, string>> = {
   '.ico': 'image/x-icon',
 };
 
-function buildPanels(now: Date): Readonly<Record<PanelId, () => Promise<PanelPayload>>> {
-  const jane = new MockJaneRepository();
-  const automation = new MockAutomationRepository();
+export interface PanelRepos {
+  readonly jane: BookingRepository & InquiryRepository;
+  readonly automation: AutomationRepository;
+}
+
+export function buildPanels(
+  now: Date,
+  repos: PanelRepos = { jane: new MockJaneRepository(), automation: new MockAutomationRepository() },
+): Readonly<Record<PanelId, () => Promise<PanelPayload>>> {
+  const { jane, automation } = repos;
   return {
     'headline-metrics': async () => {
       const metrics = await getHeadlineMetrics({ bookings: jane, inquiries: jane }, now);

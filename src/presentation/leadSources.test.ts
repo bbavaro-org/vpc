@@ -1,8 +1,11 @@
 import { createElement } from 'react';
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
-import type { InquiryRepository } from '../domain';
+import type { DateRange, InquiryRepository } from '../domain';
 import type { LeadSourceShares } from '../application/leadSources';
+import { MockAutomationRepository } from '../infrastructure/mockAutomation';
+import { MockJaneRepository } from '../infrastructure/mockJane';
+import { serverFetcher } from './testFetcher';
 import { LeadSourcesPanel } from './leadSources/LeadSourcesPanel';
 import { leadSourcesLoader } from './leadSources/leadSourcesProvider';
 
@@ -16,6 +19,12 @@ const ready: Extract<LeadSourceShares, { state: 'ready' }> = {
     { source: 'Social media', count: 0, sharePercent: 0 },
     { source: 'Word of mouth', count: 0, sharePercent: 0 },
   ],
+};
+
+const fetcherFor = (inq: InquiryRepository) => {
+  const base = new MockJaneRepository();
+  const jane = { queryBookings: (r: DateRange) => base.queryBookings(r), queryInquiries: inq.queryInquiries };
+  return serverFetcher({ jane, automation: new MockAutomationRepository() });
 };
 
 describe('lead sources panel', () => {
@@ -41,8 +50,8 @@ describe('lead sources panel', () => {
         byStage: { inquiry: 0, intakeCompleted: 0, matched: 0, booked: 0, closed: 0 },
       }),
     });
-    expect((await leadSourcesLoader(mk({}))()).items).toEqual([]);
-    const vm = await leadSourcesLoader(mk({ 'Google search': 1 }))();
+    expect((await leadSourcesLoader(fetcherFor(mk({})))()).items).toEqual([]);
+    const vm = await leadSourcesLoader(fetcherFor(mk({ 'Google search': 1 })))();
     expect(vm.items[0]).toEqual({ label: 'Google search', value: '100%' });
   });
 });

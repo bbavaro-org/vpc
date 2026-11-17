@@ -2,7 +2,7 @@ import { createElement } from 'react';
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import type { AutomationImpact } from '../application/automation';
-import { MockAutomationRepository } from '../infrastructure/mockAutomation';
+import { serverFetcher } from './testFetcher';
 import { AutomationPanel } from './automation/AutomationPanel';
 import { automationLoader } from './automation/automationProvider';
 import { resolveSlot } from './shell/provider';
@@ -46,7 +46,7 @@ describe('automation panel', () => {
 
   it('loader always yields four items from the mock repository', async () => {
     const state = await resolveSlot(
-      { 'automation-impact': automationLoader(new MockAutomationRepository()) },
+      { 'automation-impact': automationLoader(serverFetcher()) },
       'automation-impact',
     );
     expect(state.status).toBe('ready');

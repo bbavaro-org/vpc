@@ -2,10 +2,17 @@ import { createElement } from 'react';
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { buildFunnel } from '../application/funnel';
-import type { InquiryRepository } from '../domain';
+import type { DateRange, InquiryRepository } from '../domain';
+import { MockAutomationRepository } from '../infrastructure/mockAutomation';
 import { MockJaneRepository } from '../infrastructure/mockJane';
+import { serverFetcher } from './testFetcher';
 import { FunnelPanel } from './funnel/FunnelPanel';
 import { funnelLoader } from './funnel/funnelProvider';
+
+const withInquiries = (inq: InquiryRepository) => {
+  const base = new MockJaneRepository();
+  return { queryBookings: (r: DateRange) => base.queryBookings(r), queryInquiries: inq.queryInquiries };
+};
 
 describe('funnel panel', () => {
   it('renders one bar per stage with the largest drop distinguished', () => {
@@ -23,7 +30,7 @@ describe('funnel panel', () => {
     expect(html).not.toContain('-30');
   });
   it('loader yields items and a render function', async () => {
-    const vm = await funnelLoader(new MockJaneRepository())();
+    const vm = await funnelLoader(serverFetcher())();
     expect(vm.render).toBeTypeOf('function');
     expect(vm.items.length).toBe(4);
   });
@@ -40,6 +47,6 @@ describe('funnel panel', () => {
         };
       },
     };
-    expect((await funnelLoader(empty)()).items).toEqual([]);
+    expect((await funnelLoader(serverFetcher({ jane: withInquiries(empty), automation: new MockAutomationRepository() }))()).items).toEqual([]);
   });
 });

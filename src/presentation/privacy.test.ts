@@ -2,9 +2,8 @@ import { renderToString } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
 import { permittedPanels } from '../application/access';
 import { ROLES } from '../domain';
-import { MockAutomationRepository } from '../infrastructure/mockAutomation';
-import { MockJaneRepository } from '../infrastructure/mockJane';
 import { createPanelLoaders } from './panelLoaders';
+import { serverFetcher } from './testFetcher';
 
 const ROW_ID = /\b(ap|iq|cl|wl)-\d+/;
 const ISO_TIMESTAMP = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/;
@@ -12,7 +11,7 @@ const PERSONAL_LABEL = /name|note|diagnos/i;
 
 // AC-2: no personal or clinical data reaches any panel in any role.
 describe('aggregates-only boundary across roles', () => {
-  const loaders = createPanelLoaders({ jane: new MockJaneRepository(), automation: new MockAutomationRepository() });
+  const loaders = createPanelLoaders(serverFetcher());
 
   for (const role of ROLES) {
     for (const panel of permittedPanels(role)) {

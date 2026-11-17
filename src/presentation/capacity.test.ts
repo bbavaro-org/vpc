@@ -2,7 +2,7 @@ import { createElement } from 'react';
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import type { SpecialtyBooking, Waitlist } from '../application/capacity';
-import { MockJaneRepository } from '../infrastructure/mockJane';
+import { serverFetcher } from './testFetcher';
 import { CapacityPanel } from './capacity/CapacityPanel';
 import { capacityLoader } from './capacity/capacityProvider';
 
@@ -36,7 +36,7 @@ describe('capacity panel', () => {
     expect(html).not.toMatch(/>0% booked/);
   });
   it('loader yields a render function', async () => {
-    const vm = await capacityLoader(new MockJaneRepository())();
+    const vm = await capacityLoader(serverFetcher())();
     expect(vm.render).toBeTypeOf('function');
     expect(vm.items.length).toBeGreaterThan(0);
     for (const item of vm.items) {
@@ -45,7 +45,7 @@ describe('capacity panel', () => {
     }
   });
   it('loader view model and rendered body distinguish no-capacity from percent booked', async () => {
-    const vm = await capacityLoader(new MockJaneRepository())();
+    const vm = await capacityLoader(serverFetcher())();
     const body = renderToString(vm.render?.() as never);
     const noCap = vm.items.filter((i) => i.value === 'No capacity');
     const booked = vm.items.filter((i) => i.value.endsWith('% booked'));

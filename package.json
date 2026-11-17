@@ -10,7 +10,9 @@
     "test": "vitest run",
     "test:integration": "vitest run integration.test.ts",
     "test:e2e": "playwright test",
-    "seed": "tsx scripts/seed.ts"
+    "seed": "tsx scripts/seed.ts",
+    "dev:server": "tsx watch src/server/index.ts",
+    "test:bundle": "node scripts/assert-bundle-clean.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.65.1",

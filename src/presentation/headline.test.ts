@@ -2,7 +2,7 @@ import { createElement } from 'react';
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import type { HeadlineMetrics } from '../application/headline';
-import { MockJaneRepository } from '../infrastructure/mockJane';
+import { serverFetcher } from './testFetcher';
 import { HeadlineCards } from './headline/HeadlineCards';
 import { headlineLoader } from './headline/headlineProvider';
 import { PanelSlotView } from './shell/PanelSlot';
@@ -46,8 +46,7 @@ describe('headline cards', () => {
   });
 
   it('live panel reads real view models through the provider seam', async () => {
-    const jane = new MockJaneRepository();
-    const provider = { 'headline-metrics': headlineLoader({ bookings: jane, inquiries: jane }) };
+    const provider = { 'headline-metrics': headlineLoader(serverFetcher()) };
     const state = await resolveSlot(provider, 'headline-metrics');
     expect(state.status).toBe('ready');
     const html = renderToString(createElement(PanelSlotView, { slot: 'headline-metrics', state }));
