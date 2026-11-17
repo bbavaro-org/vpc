@@ -90,8 +90,8 @@ nodes), served over HTTPS at https://www.bavaro.org.
 
 ## How it was built
 
-Developed with Shipyard, an open-source Claude Code plugin for spec-driven agile sprints. Every
-feature started as a written spec with acceptance criteria,
+Developed with [Shipyard](https://github.com/Acendas/shipyard), an open-source Claude Code plugin
+for spec-driven agile sprints. Every feature started as a written spec with acceptance criteria,
 was broken into tasks and built test-first, and was checked by a separate reviewer agent against
 the spec before release — with a person approving each step. The commit history follows that
 sprint/task structure; see `CHANGELOG.md`.
