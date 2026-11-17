@@ -1,0 +1,27 @@
+# Reuses the existing Middleware bavaro-apex-redirect (regex apex -> www).
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dashboard-apex-redirect
+  namespace: default
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.middlewares: default-bavaro-apex-redirect@kubernetescrd
+spec:
+  ingressClassName: traefik
+  tls:
+    - secretName: wildcard-bavaro-org-tls
+      hosts:
+        - bavaro.org
+  rules:
+    - host: bavaro.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dashboard-service
+                port:
+                  number: 80
