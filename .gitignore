@@ -228,3 +228,4 @@ test-results
 playwright-report
 *.tsbuildinfo
 logo/
+build

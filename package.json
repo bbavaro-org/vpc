@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
+    "build:server": "vite build --ssr src/server/index.ts --outDir build/server",
     "build": "tsc -b && vite build",
     "test": "vitest run",
     "test:integration": "vitest run integration.test.ts",
